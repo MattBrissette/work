@@ -1,0 +1,2232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Brissette — Designer Portfolio</title>
+    
+    <link rel="preconnect" href="https://mbrissette.x02.me" crossorigin>
+    <link rel="dns-prefetch" href="https://mbrissette.x02.me">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Tailwind CSS Script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fafafa',
+                            100: '#f4f4f5',
+                            200: '#e4e4e7',
+                            300: '#d4d4d8',
+                            400: '#a1a1aa',
+                            500: '#71717a',
+                            600: '#52525b',
+                            700: '#3f3f46',
+                            800: '#27272a',
+                            900: '#18181b',
+                            950: '#09090b',
+                            accent: '#ff5500'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f3f3f3;
+            color: #18181b;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        .dark body {
+            background-color: #0c0c0e;
+            color: #f4f4f5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Ambient Dynamic Header - GPU Composited */
+        #mainHeader {
+            will-change: background-color, border-color, box-shadow;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: background-color 0.2s ease-out, border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+        }
+
+        /* Container Fade/Rise Observer */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px) translateZ(0);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+            backface-visibility: hidden;
+        }
+
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0) translateZ(0);
+        }
+
+        /* Architectural Horizontal Line Draw */
+        .line-draw-b {
+            position: relative;
+        }
+
+        .line-draw-b::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: rgba(212, 212, 216, 0.85);
+            transform: scaleX(0) translateZ(0);
+            transform-origin: left center;
+            transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+
+        .dark .line-draw-b::after {
+            background-color: rgba(63, 63, 70, 0.85);
+        }
+
+        .line-draw-t {
+            position: relative;
+        }
+
+        .line-draw-t::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: rgba(212, 212, 216, 0.85);
+            transform: scaleX(0) translateZ(0);
+            transform-origin: left center;
+            transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+
+        .dark .line-draw-t::before {
+            background-color: rgba(63, 63, 70, 0.85);
+        }
+
+        .is-revealed.line-draw-t::before,
+        .is-revealed .line-draw-t::before,
+        .line-draw-t.is-revealed::before {
+            transform: scaleX(1) translateZ(0);
+        }
+
+        .is-revealed.line-draw-b::after,
+        .is-revealed .line-draw-b::after,
+        .line-draw-b.is-revealed::after {
+            transform: scaleX(1) translateZ(0);
+        }
+
+        /* Micro-Stagger on Tag Pills */
+        .tag-pill {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(10px) translateZ(0);
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+            backface-visibility: hidden;
+        }
+
+        .tag-pill.is-revealed {
+            opacity: 1;
+            transform: translateY(0) translateZ(0);
+        }
+
+        /* Masked Line-by-Line Typography Reveals */
+        .masked-line-block {
+            display: inline;
+        }
+
+        .masked-line-wrap {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: top;
+            padding-bottom: 0.12em;
+            margin-bottom: -0.12em;
+            transform: translateZ(0);
+        }
+
+        .masked-line-inner {
+            display: inline-block;
+            transform: translateY(115%) translateZ(0);
+            opacity: 0.15;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+
+        .is-revealed .masked-line-inner,
+        .masked-line-wrap.is-revealed .masked-line-inner {
+            transform: translateY(0%) translateZ(0);
+            opacity: 1;
+        }
+
+        /* Bento Card Layout */
+        .bento-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 320px;
+            transform: translateZ(0);
+            border-radius: 4px !important;
+        }
+
+        .bento-card img,
+        .bento-card video {
+            border-radius: 4px !important;
+        }
+
+        /* Callout Cards */
+        .callout-card {
+            border-radius: 4px !important;
+        }
+
+        @media (min-width: 768px) {
+            .bento-card {
+                min-height: 420px;
+            }
+        }
+
+        /* Easy Load Progressive Image Reveal & Skeleton Shimmer */
+        @keyframes skeleton-shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .bento-card::before,
+        .lab-img-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(228, 228, 231, 0.15) 0%, rgba(244, 244, 245, 0.5) 50%, rgba(228, 228, 231, 0.15) 100%);
+            background-size: 200% 100%;
+            animation: skeleton-shimmer 2s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 1;
+            transition: opacity 0.4s ease-out;
+        }
+
+        .dark .bento-card::before,
+        .dark .lab-img-wrap::before {
+            background: linear-gradient(90deg, rgba(39, 39, 42, 0.25) 0%, rgba(63, 63, 70, 0.45) 50%, rgba(39, 39, 42, 0.25) 100%);
+            background-size: 200% 100%;
+        }
+
+        .bento-card.is-img-ready::before,
+        .bento-card:has(video)::before,
+        .lab-img-wrap.is-img-ready::before {
+            opacity: 0 !important;
+            display: none !important;
+        }
+
+        .img-easy-load {
+            opacity: 0;
+            filter: blur(8px);
+            transform: scale(1.02) translateZ(0);
+            transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                        filter 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, filter, transform;
+            backface-visibility: hidden;
+        }
+
+        .img-easy-load.is-loaded {
+            opacity: 1;
+            filter: blur(0);
+            transform: scale(1) translateZ(0);
+        }
+
+        /* Slideshow image optimization */
+        .stryx-slide, .rocketair-slide, .rig-slide, .oatfi-slide, .cargosprint-slide, .olive-slide, .larus2-slide {
+            will-change: opacity;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        .stryx-slide.opacity-100, .rocketair-slide.opacity-100,
+        .rig-slide.opacity-100, .oatfi-slide.opacity-100, .olive-slide.opacity-100, .larus2-slide.opacity-100 {
+            opacity: 1 !important;
+        }
+
+        .stryx-slide.opacity-0, .rocketair-slide.opacity-0,
+        .rig-slide.opacity-0, .oatfi-slide.opacity-0, .olive-slide.opacity-0, .larus2-slide.opacity-0 {
+            opacity: 0 !important;
+        }
+
+        /* Monospace Decryption & Scramble Styling */
+        .scramble-mono {
+            display: inline-block;
+            font-variant-numeric: tabular-nums;
+            cursor: default;
+            user-select: none;
+            transition: color 0.15s ease;
+        }
+
+        .scramble-mono:hover {
+            color: #18181b;
+        }
+
+        .dark .scramble-mono:hover {
+            color: #ffffff;
+        }
+
+        /* Film Grain Overlay */
+        .noise-bg {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='chromaticNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.4' numOctaves='3' stitchTiles='stitch' result='noise'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0' in='noise' result='red'/%3E%3CfeOffset in='red' dx='-1.2' dy='0.6' result='redShift'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0' in='noise' result='cyan'/%3E%3CfeOffset in='cyan' dx='1.2' dy='-0.6' result='cyanShift'/%3E%3CfeBlend in='redShift' in2='cyanShift' mode='screen'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23chromaticNoise)'/%3E%3C/svg%3E");
+            opacity: 0.18;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+            z-index: 0;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            animation: noise-shift 0.8s steps(6) infinite;
+        }
+
+        .dark .noise-bg {
+            opacity: 0.12;
+            mix-blend-mode: screen;
+        }
+
+        @keyframes noise-shift {
+            0% { transform: translate3d(0, 0, 0); }
+            20% { transform: translate3d(-2%, -3%, 0); }
+            40% { transform: translate3d(3%, 1%, 0); }
+            60% { transform: translate3d(-1%, 4%, 0); }
+            80% { transform: translate3d(2%, -2%, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+
+        @keyframes marquee {
+            0% { transform: translate3d(0%, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 54.1s linear infinite;
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Avatar Pop-up Status Badge Effect */
+        .avatar-badge-container {
+            position: relative;
+            display: inline-block;
+            vertical-align: -0.18em;
+            margin-left: 0.55rem;
+            margin-right: 0.375rem;
+            width: 1.1em;
+            height: 1.1em;
+            border-radius: 9999px;
+            cursor: pointer;
+            overflow: visible !important;
+            transform: translateZ(0);
+        }
+
+        .avatar-badge-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 9999px;
+            display: block;
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateZ(0);
+        }
+
+        .avatar-badge-container:hover .avatar-badge-img,
+        .avatar-badge-container.is-popped .avatar-badge-img {
+            transform: scale(1.12) translateZ(0);
+        }
+
+        .avatar-wave-badge {
+            position: absolute;
+            top: -0.55em;
+            right: -0.45em;
+            font-size: 0.55em;
+            line-height: 1;
+            padding: 0.15em 0.2em;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 9999px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            transform: scale(0.3) translateY(4px) translateZ(0);
+            transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: none;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backface-visibility: hidden;
+        }
+
+        .dark .avatar-wave-badge {
+            background: #27272a;
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .avatar-badge-container:hover .avatar-wave-badge,
+        .avatar-badge-container.is-popped .avatar-wave-badge {
+            opacity: 1;
+            transform: scale(1) translateY(0) translateZ(0);
+            animation: wave-bounce 0.6s ease-in-out;
+        }
+
+        @keyframes wave-bounce {
+            0% { transform: scale(0.3) translateY(4px) rotate(0deg) translateZ(0); }
+            40% { transform: scale(1.2) translateY(-2px) rotate(14deg) translateZ(0); }
+            60% { transform: scale(0.9) translateY(0px) rotate(-8deg) translateZ(0); }
+            80% { transform: scale(1.05) translateY(-1px) rotate(4deg) translateZ(0); }
+            100% { transform: scale(1) translateY(0) rotate(0deg) translateZ(0); }
+        }
+
+        /* Monumental Footer Typographic Signature */
+        .footer-name-svg {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 900;
+            font-size: 114px;
+            letter-spacing: -0.045em;
+            fill: #18181b;
+            user-select: none;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .dark .footer-name-svg {
+            fill: #f4f4f5;
+        }
+
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background-color: rgba(9, 9, 11, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox-overlay.is-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 4px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-overlay.is-active .lightbox-img {
+            transform: scale(1);
+        }
+
+        .lightbox-video {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 4px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-overlay.is-active .lightbox-video {
+            transform: scale(1);
+        }
+
+        .clickable-img {
+            cursor: zoom-in;
+        }
+
+        body.lightbox-open {
+            overflow: hidden;
+        }
+
+        /* Ensure hidden slides can't intercept clicks */
+        .stryx-slide.opacity-0, .rocketair-slide.opacity-0,
+        .rig-slide.opacity-0, .oatfi-slide.opacity-0, .olive-slide.opacity-0, .larus2-slide.opacity-0 {
+            pointer-events: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .noise-bg { animation: none !important; }
+            .animate-marquee { animation: none !important; }
+            .avatar-badge-img, .avatar-wave-badge { animation: none !important; transition: none !important; }
+            .reveal-on-scroll { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .masked-line-inner { transform: none !important; opacity: 1 !important; transition: none !important; }
+            .scramble-mono { transition: none !important; }
+            .line-draw-t::before, .line-draw-b::after { transform: scaleX(1) !important; transition: none !important; }
+            .tag-pill { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .img-easy-load { opacity: 1 !important; filter: none !important; transform: none !important; transition: none !important; }
+            .bento-card::before, .lab-img-wrap::before { display: none !important; animation: none !important; }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.02); }
+        ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-brand-900 selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-200">
+
+    <!-- Film Grain Background -->
+    <div class="noise-bg" aria-hidden="true"></div>
+
+    <header id="mainHeader" class="sticky top-0 z-40 border-b border-transparent bg-transparent relative">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 py-3.5 flex items-center justify-between text-sm">
+            <div class="flex items-center space-x-3">
+                <a href="#top" class="text-sm font-normal hover:opacity-70 transition-opacity text-brand-900 dark:text-brand-100 flex items-center">
+                    Matthieu Brissette
+                </a>
+            </div>
+
+            <div class="flex items-center">
+                <nav class="hidden md:flex items-center space-x-2 text-sm font-normal text-brand-600 dark:text-brand-400">
+                    <a href="#projects" class="hover:text-brand-900 dark:hover:text-white transition-colors">Work,</a>
+                    <a href="#lab" class="hover:text-brand-900 dark:hover:text-white transition-colors">Lab,</a>
+                    <a href="#about" class="hover:text-brand-900 dark:hover:text-white transition-colors">About,</a>
+                    <a href="#contact" class="hover:text-brand-900 dark:hover:text-white transition-colors">Contact</a>
+                </nav>
+
+                <button id="mobileMenuToggle" class="md:hidden p-1.5 rounded-md hover:bg-brand-200/50 dark:hover:bg-brand-800/50 text-brand-600 dark:text-brand-400 transition-colors cursor-pointer" title="Toggle Navigation Menu" aria-label="Toggle Navigation Menu">
+                    <i data-lucide="menu" id="menuOpenIcon" class="w-4 h-4 block"></i>
+                    <i data-lucide="x" id="menuCloseIcon" class="w-4 h-4 hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden border-t border-brand-300/70 dark:border-brand-800/70 bg-[#f3f3f3]/95 dark:bg-[#0c0c0e]/95 backdrop-blur-md px-5 py-4 space-y-3">
+            <nav class="flex flex-col space-y-3 text-sm text-brand-700 dark:text-brand-300 font-medium">
+                <a href="#projects" class="mobile-nav-link hover:text-brand-900 dark:hover:text-white transition-colors py-1">Work</a>
+                <a href="#lab" class="mobile-nav-link hover:text-brand-900 dark:hover:text-white transition-colors py-1">Lab</a>
+                <a href="#about" class="mobile-nav-link hover:text-brand-900 dark:hover:text-white transition-colors py-1">About</a>
+                <a href="#contact" class="mobile-nav-link hover:text-brand-900 dark:hover:text-white transition-colors py-1">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pt-10 sm:pt-16 pb-16 sm:pb-20 space-y-16 sm:space-y-24">
+
+        <section id="top" class="space-y-10 sm:space-y-12 max-w-5xl pt-2 reveal-on-scroll" data-context="Visual Design &amp; Digital Products">
+            <h1 class="text-[clamp(1.5rem,3.8vw,2.6rem)] leading-[1.18] sm:leading-[1.2] font-normal tracking-tight text-brand-900 dark:text-brand-100" data-reveal="masked-lines">
+                Hi, I’m <a href="https://www.linkedin.com/in/mattbrissette/" target="_blank" rel="noopener noreferrer" class="underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 dark:hover:decoration-brand-100 transition-colors font-medium">Matt Brissette</a><span class="avatar-badge-container shrink-0 cursor-pointer" onclick="triggerBadgePop(this)" title="Hi! 👋"><img src="https://mbrissette.x02.me/i/27NVNF.jpeg" alt="Matt Brissette" class="avatar-badge-img border border-brand-300 dark:border-brand-700 shadow-sm shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/40x40/18181b/ffffff?text=MB'" /><span class="avatar-wave-badge" aria-hidden="true">👋</span></span>, an Interactive &amp; Digital Experience Designer based in the Gatineau–Ottawa region. I turn complex ideas into clear, engaging experiences across web, e-commerce, and interactive.
+            </h1>
+            
+            <div class="pt-4 sm:pt-6 max-w-full overflow-hidden">
+                <div class="relative overflow-hidden w-full [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-1">
+                    <div class="animate-marquee flex items-center space-x-6 text-sm sm:text-base font-medium text-brand-800 dark:text-brand-200 whitespace-nowrap">
+                        <span>Barnes & Noble</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Canadian Space Agency</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>CargoSprint</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>CaRMS</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>FLO EV Charger</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>HUB International</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Intuit</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Larus</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>MCIM</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Oatfi</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Rao's Homemade</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Schneider Electric</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Shimano</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Trend Micro</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>United Rentals</span><span class="text-brand-400 font-mono text-xs">/</span>
+
+                        <!-- Duplicate Set for Continuous Loop -->
+                        <span>Barnes & Noble</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Canadian Space Agency</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>CargoSprint</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>CaRMS</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>FLO EV Charger</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>HUB International</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Intuit</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Larus</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>MCIM</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Oatfi</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Rao's Homemade</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Schneider Electric</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Shimano</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>Trend Micro</span><span class="text-brand-400 font-mono text-xs">/</span>
+                        <span>United Rentals</span><span class="text-brand-400 font-mono text-xs">/</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="projects" class="space-y-16 sm:space-y-24">
+
+            <!-- PROJECT 1: OatFi -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,User Map,Information Architecture,Email Design,Design System,Illustration,Brand Evolution,Marketing Assets" data-context="01 / 06 OatFi">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>OatFi</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">01 / 06</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B, Fintech</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/dFBmt6.webp" loading="eager" fetchpriority="high" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=Terraformation+1'" alt="Terraformation 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#1E2329] dark:bg-[#1E2329] border-0 rounded-xl bento-card is-img-ready relative overflow-hidden group flex items-center justify-center" style="background-color: #1E2329; border: none;">
+                        <video id="oatfiVideo" data-src="https://mbrissette.x02.me/i/Ytp7ap.mp4" loop muted playsinline webkit-playsinline preload="none" class="w-full h-full object-cover rounded-xl clickable-img block" aria-label="OatFi Brand Identity Motion"></video>
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/dW9K3Q.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Terraformation+3'" alt="Terraformation 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <!-- Card 4: Terraformation 6-Image Slideshow -->
+                    <div id="olive-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/zAvFrG.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4a'" alt="Terraformation - Sequence 1" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/VYcYcE.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4b'" alt="Terraformation - Sequence 2" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/HVdRFk.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4c'" alt="Terraformation - Sequence 3" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/oaKqbf.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4d'" alt="Terraformation - Sequence 4" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/tLS83n.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4e'" alt="Terraformation - Sequence 5" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/tn59sw.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4f'" alt="Terraformation - Sequence 6" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="olive-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="olive-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="olive-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="olive-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="olive-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="olive-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/B3gqtF.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Terraformation+5'" alt="Terraformation 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">User Map</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Information Architecture</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Email Design</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Design System</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Illustration</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Evolution</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Marketing Assets</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            OatFi’s API lets platforms embed working capital into B2B payment flows, a product that is hard to explain in a few seconds.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I created a user map and led UX strategy, information architecture and design for the website and emails, using custom icons, illustrations and purposeful microinteractions to turn technical concepts into clear value propositions.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I also built a modular design system and a bold black, white and neon identity that adapt across platforms and industries.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 lg:w-4/5">
+                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2.5 md:col-span-2">
+                            <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">Result</h4>
+                            <p class="text-xs sm:text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                                “The design team created a compelling website and built out a client success playbook, both of which help us stand out among the competition. They were able to take complex technical concepts and distill them down to the core value propositions that will contribute to OatFi's explosive growth.”
+                            </p>
+                            <span class="block text-xs font-mono text-brand-500 dark:text-brand-400 not-italic pt-1 scramble-mono">— Mike Barbosa, CEO, OatFi</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 2: Larus -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Interactive 3D,Web Design &amp; UX,AI-Assisted Build,Lead Capture,Design System,Art Direction,Brand Guidelines,Brand Evolution" data-context="02 / 06 Larus">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>Larus</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">02 / 06</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">Defence Tech, AI</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#0c0c12] dark:bg-[#0c0c12] border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group aspect-[16/9] sm:aspect-[2/1] lg:aspect-[16/9]">
+                        <video id="larusTopVideo" data-src="https://mbrissette.x02.me/i/Q2ZLa5.mp4" loop muted playsinline webkit-playsinline preload="none" class="absolute inset-0 w-full h-full object-cover rounded-xl clickable-img block" aria-label="Larus Video Overview"></video>
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/wA0aif.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+2'" alt="Larus 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/lYCoN6.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+3'" alt="Larus 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <!-- Card 4: Larus 6-Image Slideshow -->
+                    <div id="larus2-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/VTDx6F.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4a'" alt="Larus - Sequence 1" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/azx5TB.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4b'" alt="Larus - Sequence 2" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/8SZ8Sf.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4c'" alt="Larus - Sequence 3" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/obha6G.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4d'" alt="Larus - Sequence 4" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/I5i2P7.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4e'" alt="Larus - Sequence 5" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/G56mVJ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4f'" alt="Larus - Sequence 6" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="larus2-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/STtuA2.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+5'" alt="Larus 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Interactive 3D</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">AI-Assisted Build</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Lead Capture</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Design System</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Art Direction</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Guidelines</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Evolution</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            Trade show conversations are short, and enterprise software is hard to explain in a few minutes. I designed and built an interactive 3D exhibition experience that launched alongside Larus's booth at CANSEC, Canada's largest defence and security trade show.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            It combines storytelling, product demos, downloadable resources and lead capture, was built with AI-assisted tools (Gemini and Claude), and can be re-skinned for future shows.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I also led UX, art direction and design for the Larus marketing site, turning complex AI capabilities into a clear digital platform.
+                        </p>
+                        <div class="pt-1">
+                            <a href="https://mattbrissette.github.io/3d_booth/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm sm:text-base font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 dark:hover:decoration-brand-100 transition-colors group">
+                                <span class="font-medium group-hover:text-brand-900 dark:group-hover:text-white">mattbrissette.github.io/3d_booth</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 3: SECLOCK -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,E-Commerce,Information Architecture,Email Design,Marketing Website,Design System,Brand Evolution" data-context="03 / 06 SECLOCK">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>SECLOCK</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">03 / 06</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B, Industrial Supplies</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <!-- Big Full-Width Image (Image 01) at the TOP -->
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/7XSBX3.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=Larus+1'" alt="Larus 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/NU39.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+2'" alt="Larus 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/PKZD.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+3'" alt="Larus 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <!-- Card 4: Larus 4-Image Slideshow -->
+                    <div id="oatfi-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/7342F.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+Sequence+1'" alt="Larus - Sequence 1" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/AVGM8.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+Sequence+2'" alt="Larus - Sequence 2" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/GKZNFQ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+Sequence+3'" alt="Larus - Sequence 3" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/dDCTiM.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+Sequence+4'" alt="Larus - Sequence 4" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="oatfi-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="oatfi-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="oatfi-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="oatfi-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Larus Banners / Collateral -->
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/AGN5.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+Footer+and+Identity'" alt="Larus Digital Platform and Identity" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">E-Commerce</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Information Architecture</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Email Design</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Marketing Website</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Design System</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Evolution</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            SECLOCK sells a complex B2B product catalog that needed to be easier to navigate and understand.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I redesigned the e-commerce experience around real B2B user needs: new information architecture, restructured product-detail pages, predictive search, filtering and contextual tutorials.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I also redesigned the marketing website and emails around the customer journey and refreshed the brand, with a flexible digital system and typography inspired by West Berlin street signage.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 4: Terraformation -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Landing Page,Content Design,Marketing Assets" data-context="04 / 06 Terraformation">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>Terraformation</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">04 / 06</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B, Climate Tech</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/ScnxQQ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1b2a1f/ffffff?text=Terraformation+1'" alt="Terraformation 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/poAnUU.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/1b2a1f/ffffff?text=Terraformation+2'" alt="Terraformation 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/bPdQg0.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/1b2a1f/ffffff?text=Terraformation+3'" alt="Terraformation 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <!-- Card 4: Terraformation 4-Image Slideshow -->
+                    <div id="rocketair-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/Su6ACF.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=Terraformation+4a'" alt="Terraformation - Sequence 1" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/UN8MRo.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=Terraformation+4b'" alt="Terraformation - Sequence 2" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/9eFG3G.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=Terraformation+4c'" alt="Terraformation - Sequence 3" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/te4pBL.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=Terraformation+4d'" alt="Terraformation - Sequence 4" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="rocketair-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/umuPIm.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/500x500/1b2a1f/ffffff?text=Terraformation+5'" alt="Terraformation 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Landing Page</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Content Design</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Marketing Assets</span>
+                    </div>
+
+                    <div class="space-y-5 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <div class="space-y-1.5">
+                            <h3 class="text-xs font-mono uppercase tracking-wider text-brand-400 dark:text-brand-500 scramble-mono">Challenge</h3>
+                            <p data-reveal="masked-lines">
+                                Terraformation works to solve the biggest bottlenecks in native forest restoration. To launch the Seed to Forest Alliance, it needed a digital presence that combined ecological credibility with modern, technology-forward design.
+                            </p>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <h3 class="text-xs font-mono uppercase tracking-wider text-brand-400 dark:text-brand-500 scramble-mono">Solution</h3>
+                            <p data-reveal="masked-lines">
+                                I led UX, information architecture and visual design for Terraformation's digital experience and the Seed to Forest Alliance platform. That included a research-driven story on why seed supply matters, an event page for NYC Climate Week, and a sign-up form for partners, landowners and carbon buyers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 5: TrailerTrader -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Dashboard Design,Web Design &amp; UX,E-Commerce,Mobile-First,Design System,Lead Generation" data-context="05 / 06 TrailerTrader">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>TrailerTrader</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">05 / 06</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B/B2C Marketplace</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/LlBc6w.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=TrailerTrader+1'" alt="TrailerTrader 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/JTs4EC.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=TrailerTrader+2'" alt="TrailerTrader 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/ZdU2l7.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=TrailerTrader+3'" alt="TrailerTrader 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <!-- Card 4: TrailerTrader 5-Image Slideshow -->
+                    <div id="stryx-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/oOfraK.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4a'" alt="TrailerTrader - Sequence 1" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/D6mZmo.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4b'" alt="TrailerTrader - Sequence 2" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/E8XMAy.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4c'" alt="TrailerTrader - Sequence 3" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/OJL7la.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4d'" alt="TrailerTrader - Sequence 4" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/Duj81g.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4e'" alt="TrailerTrader - Sequence 5" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="stryx-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/uCEql1.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/500x500/18181b/ffffff?text=TrailerTrader+5'" alt="TrailerTrader 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Dashboard Design</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">E-Commerce</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Mobile-First</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Design System</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Lead Generation</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            As TrailerTrader became the leading marketplace in its category, its existing product needed to evolve to support increased traffic, modern buyer expectations, and a more sophisticated dealer ecosystem.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            A major hurdle for many buyers was knowing they needed a trailer but feeling overwhelmed by technical specs and unsure of which category suited their needs. To solve this, we introduced a guided recommendation tool that lets shoppers answer a few quick questions about their haul, towing capacity, and usage, instantly pointing them to the ideal trailer type.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I created a comprehensive design system, designed a new dashboard for dealers, and delivered a faster, mobile-first experience with simpler navigation and stronger lead generation for dealers. This created more direct connections between buyers and dealers while providing a scalable foundation for future feature releases.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 6: MCIM -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Wireframes,PowerPoint Template &amp; Deck,Iconography,Art Direction,Brand Guidelines,Brand Evolution" data-context="06 / 06 MCIM">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>MCIM</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">06 / 06</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B SaaS</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/kK67aq.jpeg" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=MCIM+1'" alt="MCIM 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/mB0mkY.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=MCIM+2'" alt="MCIM 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/4Y5P7S.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=MCIM+3'" alt="MCIM 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div id="rig-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/pi2ZU4.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=MCIM+4a'" alt="MCIM - Sequence 1" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/fsMcTD.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=MCIM+4b'" alt="MCIM - Sequence 2" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/mUMQjB.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=MCIM+4c'" alt="MCIM - Sequence 3" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/X4ydje.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=MCIM+4d'" alt="MCIM - Sequence 4" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/5yTDEj.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=MCIM+4e'" alt="MCIM - Sequence 5" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="rig-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: MCIM 5 -->
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/7X2hlV.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=MCIM+5'" alt="MCIM 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Wireframes</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">PowerPoint Template &amp; Deck</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Iconography</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Art Direction</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Guidelines</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Evolution</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            Fulcrum Collaborations’ flagship SaaS product, MCIM, was growing fast and needed a website that clearly explains what it does and who it serves.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I led UX and wireframing before designing the final site, then built the supporting system: a PowerPoint template and deck, custom iconography, brand guidelines and art direction that modernized the identity without losing its recognition.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 lg:w-4/5">
+                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2.5 md:col-span-2">
+                            <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">Result</h4>
+                            <p class="text-xs sm:text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                                “The unified platform supports growth across 90+ countries. The CMO reported an ‘immediate improvement in leads and market reaction.’”
+                            </p>
+                            <span class="block text-xs font-mono text-brand-500 dark:text-brand-400 not-italic pt-1 scramble-mono">— CMO, MCIM</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- LAB SECTION -->
+        <section id="lab" class="pt-12 line-draw-t space-y-6 reveal-on-scroll" data-context="Lab">
+            <h2 class="text-lg font-semibold tracking-tight text-brand-900 dark:text-brand-100" data-reveal="masked-lines">Lab</h2>
+
+            <div class="divide-y divide-brand-300/80 dark:divide-brand-800">
+                <!-- LAB PROJECT 1: RocketAir -->
+                <div class="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 group reveal-on-scroll">
+                    <div class="w-full sm:w-48 aspect-[3/2] shrink-0 border border-brand-200/80 dark:border-brand-800 rounded-xl overflow-hidden bg-brand-100 dark:bg-brand-900 relative lab-img-wrap">
+                        <img src="https://mbrissette.x02.me/i/W57QZ.webp" alt="RocketAir website" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/18181b/ffffff?text=RocketAir'" />
+                    </div>
+                    <div class="flex-1 space-y-2">
+                        <p class="text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                            Client project, built in collaboration with RocketAir. A motion-led website with bold editorial typography and a neon yellow accent on a black-and-white base. Awwwards Site of the Day and Developer Award, CSS Design Awards Website of the Day.
+                        </p>
+                        <a href="https://www.rocketair.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 transition-colors font-medium">
+                            rocketair.com <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-60"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LAB PROJECT 2: Kinetic Columns -->
+                <div class="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 group reveal-on-scroll">
+                    <div class="w-full sm:w-48 aspect-[3/2] shrink-0 border border-brand-200/80 dark:border-brand-800 rounded-xl overflow-hidden bg-brand-100 dark:bg-brand-900 relative lab-img-wrap">
+                        <img src="https://mbrissette.x02.me/i/3U4H.webp" alt="Kinetic Columns 3D Exploration" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/18181b/ffffff?text=Kinetic+Columns'" />
+                    </div>
+                    <div class="flex-1 space-y-2">
+                        <p class="text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                            3D exploration built with Three.js and WebGL. Using procedural animation, audio-reactive motion, and interactive controls, it transforms a simple grid of columns into a dynamic digital playground. Built with Cursor.
+                        </p>
+                        <a href="https://mattbrissette.github.io/Kinetic_Columns/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 transition-colors font-medium">
+                            mattbrissette.github.io/Kinetic_Columns <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-60"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LAB PROJECT 3: Glass Cube -->
+                <div class="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 group reveal-on-scroll">
+                    <div class="w-full sm:w-48 aspect-[3/2] shrink-0 border border-brand-200/80 dark:border-brand-800 rounded-xl overflow-hidden bg-brand-100 dark:bg-brand-900 relative lab-img-wrap">
+                        <img src="https://mbrissette.x02.me/i/8GXTD.webp" alt="Glass Cube 3D Experience" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/18181b/ffffff?text=Glass+Cube'" />
+                    </div>
+                    <div class="flex-1 space-y-2">
+                        <p class="text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                            Built with Three.js, CSS3DRRenderer, and custom WebGL shaders, this interactive portfolio transforms traditional profile content into a navigable 3D glass cube experience. The project combines real-time rendering, procedural environments, post-processing effects, dynamic lighting, and CSS-driven interfaces.
+                        </p>
+                        <a href="https://mattbrissette.github.io/glass-cube/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 transition-colors font-medium">
+                            mattbrissette.github.io/glass-cube <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-60"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LAB PROJECT 4: Loam — Spatial Search Engine -->
+                <div class="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 group reveal-on-scroll">
+                    <div class="w-full sm:w-48 aspect-[3/2] shrink-0 border border-brand-200/80 dark:border-brand-800 rounded-xl overflow-hidden bg-brand-100 dark:bg-brand-900 relative lab-img-wrap">
+                        <img src="https://mbrissette.x02.me/i/O1mFjc.webp" alt="Loam — Spatial Search Engine" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/18181b/ffffff?text=Loam'" />
+                    </div>
+                    <div class="flex-1 space-y-2">
+                        <p class="text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                            A spatial search engine built for discovery, not scrolling. As design engineer, I owned this end to end, concept, interaction design, and the full Three.js/WebGL build — turning search results into an explorable 3D environment where clusters and unexpected connections emerge instead of a ranked list.
+                        </p>
+                        <p class="text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                            The experience pulls live data from DuckDuckGo, Wikipedia, OpenAlex, Hacker News, The Met, and the Art Institute of Chicago. Users orbit through the space, inspect nodes, expand a result into a new search, pin discoveries into a personal constellation, and export findings as Markdown notes.
+                        </p>
+                        <p class="text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                            Built from scratch with Three.js, WebGL, GLSL, GSAP, live APIs, spatial algorithms, and GPU instancing, with AI-assisted development (Gemini + Claude) supports thousands of entities while staying real-time and interactive.
+                        </p>
+                        <a href="https://mattbrissette.github.io/loam" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 transition-colors font-medium pt-1">
+                            mattbrissette.github.io/loam <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-60"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="pt-12 line-draw-t reveal-on-scroll" data-context="About">
+            <h2 class="text-lg font-semibold tracking-tight text-brand-900 dark:text-brand-100" data-reveal="masked-lines">About</h2>
+            
+            <div class="mt-6 space-y-4 max-w-3xl text-base sm:text-lg text-brand-700 dark:text-brand-300 leading-relaxed font-normal">
+                <p data-reveal="masked-lines">
+                    I'm an Interactive and Digital Experience Designer with 10 years of experience, based in the Gatineau–Ottawa region. I design websites, e-commerce, email, and interactive experiences for B2B technology companies, turning complex products into clear, engaging stories.
+                </p>
+                <p data-reveal="masked-lines">
+                    I work from UX, information architecture, and wireframes through to polished design, within an established brand or helping evolve it. I'm comfortable presenting concepts, working closely with developers, and taking projects from idea to ready-to-build.
+                </p>
+                <p data-reveal="masked-lines">
+                    I use GenAI and 3D/WebGL to explore ideas faster and go beyond standard templates. My work has been recognized by Awwwards and CSS Design Awards. I work in English and French.
+                </p>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="pt-12 line-draw-t space-y-8 reveal-on-scroll" data-context="Contact">
+            <div class="space-y-4 max-w-3xl">
+                <h2 class="text-lg font-semibold tracking-tight text-brand-900 dark:text-brand-100" data-reveal="masked-lines">Get In Touch</h2>
+                <p class="text-base sm:text-lg text-brand-700 dark:text-brand-300 leading-relaxed font-normal" data-reveal="masked-lines">
+                    I'm always interested in meeting great people and working on meaningful products. Feel free to reach out. Je parle français aussi :)
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm pt-2">
+                <div class="group flex items-center justify-between py-2.5 border-b border-brand-300/80 dark:border-brand-800/80">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 truncate pr-2">
+                        <span class="text-xs font-mono text-brand-400 uppercase shrink-0 w-16 scramble-mono">EMAIL</span>
+                        <a href="mailto:matthieubrissette@gmail.com" class="text-brand-800 dark:text-brand-200 hover:text-brand-900 dark:hover:text-white font-medium truncate">matthieubrissette@gmail.com</a>
+                    </div>
+                    <button onclick="copyEmail(event)" class="text-brand-400 hover:text-brand-900 dark:hover:text-white transition-colors p-1 shrink-0 cursor-pointer" title="Copy Email">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <a href="https://linkedin.com/in/mattbrissette" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between py-2.5 border-b border-brand-300/80 dark:border-brand-800/80 hover:border-brand-900 dark:hover:border-brand-100 transition-colors">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 truncate pr-2">
+                        <span class="text-xs font-mono text-brand-400 uppercase shrink-0 w-16 scramble-mono">LINKEDIN</span>
+                        <span class="text-brand-800 dark:text-brand-200 group-hover:text-brand-900 dark:group-hover:text-white font-medium truncate">linkedin.com/in/mattbrissette</span>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4 text-brand-400 group-hover:text-brand-900 dark:group-hover:text-white transition-colors shrink-0"></i>
+                </a>
+
+                <a href="https://github.com/MattBrissette" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between py-2.5 border-b border-brand-300/80 dark:border-brand-800/80 hover:border-brand-900 dark:hover:border-brand-100 transition-colors">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 truncate pr-2">
+                        <span class="text-xs font-mono text-brand-400 uppercase shrink-0 w-16 scramble-mono">GITHUB</span>
+                        <span class="text-brand-800 dark:text-brand-200 group-hover:text-brand-900 dark:group-hover:text-white font-medium truncate">github.com/MattBrissette</span>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4 text-brand-400 group-hover:text-brand-900 dark:group-hover:text-white transition-colors shrink-0"></i>
+                </a>
+
+                <a href="https://behance.net/matthieubrissette" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between py-2.5 border-b border-brand-300/80 dark:border-brand-800/80 hover:border-brand-900 dark:hover:border-brand-100 transition-colors">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 truncate pr-2">
+                        <span class="text-xs font-mono text-brand-400 uppercase shrink-0 w-16 scramble-mono">BEHANCE</span>
+                        <span class="text-brand-800 dark:text-brand-200 group-hover:text-brand-900 dark:group-hover:text-white font-medium truncate">behance.net/matthieubrissette</span>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4 text-brand-400 group-hover:text-brand-900 dark:group-hover:text-white transition-colors shrink-0"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MONUMENTAL CONTAINER-ALIGNED FOOTER -->
+    <footer class="relative z-10 border-t border-brand-300/80 dark:border-brand-800 pt-10 sm:pt-14 pb-12 sm:pb-16 overflow-hidden select-none transition-colors">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 space-y-6 sm:space-y-8">
+            <!-- Monumental Typographic Signature -->
+            <div class="w-full overflow-hidden leading-none cursor-default py-1">
+                <svg id="footerNameSvg" viewBox="0 0 905 84" class="w-full h-auto block select-none overflow-visible" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Matt Brissette">
+                    <text id="footerNameText" x="0" y="82" class="footer-name-svg">MATT BRISSETTE</text>
+                </svg>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-brand-900 text-white dark:bg-white dark:text-black px-4 py-3 rounded-lg text-xs font-medium shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
+        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 dark:text-emerald-600"></i>
+        <span>Email copied to clipboard!</span>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/70 hover:text-white transition-colors cursor-pointer z-10" id="lightboxClose" title="Close (Esc)">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </div>
+        <img id="lightboxImg" src="" alt="Fullscreen view" class="lightbox-img hidden" />
+        <video id="lightboxVideo" src="" class="lightbox-video hidden" autoplay loop muted playsinline controls></video>
+    </div>
+
+    <script>
+        /* Slideshow State Handlers */
+        let stryxSlideIndex = 0;
+        let stryxTimer = null;
+
+        let larus2SlideIndex = 0;
+        let larus2Timer = null;
+
+        let rigSlideIndex = 0;
+        let rigTimer = null;
+
+        let oatfiSlideIndex = 0;
+        let oatfiTimer = null;
+
+        let rocketairSlideIndex = 0;
+        let rocketairTimer = null;
+
+        let oliveSlideIndex = 0;
+        let oliveTimer = null;
+
+        /* Smooth Anchor Scroll Navigation */
+        function initNativeScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#' || !href) return;
+                    const targetEl = document.querySelector(href);
+                    if (targetEl) {
+                        e.preventDefault();
+                        const headerOffset = href === '#top' ? 0 : 24;
+                        const elementPosition = targetEl.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        const GLITCH_GLYPHS = '0123456789_#*/$!<>[]&%+=~';
+
+        function scrambleText(element, newText = null, duration = 200) {
+            if (!element) return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                if (newText !== null) element.textContent = newText;
+                return;
+            }
+
+            const final = newText !== null ? newText : (element.getAttribute('data-original-text') || element.textContent.trim());
+            element.setAttribute('data-original-text', final);
+            
+            const chars = final.split('');
+            const totalChars = chars.length;
+            const startTime = performance.now();
+            
+            if (element._scrambleAnimId) {
+                cancelAnimationFrame(element._scrambleAnimId);
+            }
+
+            function tick(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const resolvedCount = Math.floor(progress * totalChars);
+
+                const displayed = chars.map((char, index) => {
+                    if (char === ' ' || char === '/' || char === ',' || char === '&' || char === '-') {
+                        return char;
+                    }
+                    if (index < resolvedCount) {
+                        return char;
+                    }
+                    if (Math.random() < 0.12) return char;
+                    return GLITCH_GLYPHS[Math.floor(Math.random() * GLITCH_GLYPHS.length)];
+                }).join('');
+
+                element.textContent = displayed;
+
+                if (progress < 1) {
+                    element._scrambleAnimId = requestAnimationFrame(tick);
+                } else {
+                    element.textContent = final;
+                    element._scrambleAnimId = null;
+                }
+            }
+
+            element._scrambleAnimId = requestAnimationFrame(tick);
+        }
+
+        function initTagPills() {
+            const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const tagContainers = document.querySelectorAll('.project-tags');
+
+            if (isReduced) {
+                document.querySelectorAll('.tag-pill').forEach(pill => pill.classList.add('is-revealed'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const pills = entry.target.querySelectorAll('.tag-pill');
+                        pills.forEach((pill, i) => {
+                            setTimeout(() => {
+                                pill.classList.add('is-revealed');
+                                scrambleText(pill, null, 200);
+                            }, i * 50);
+                        });
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -20px 0px'
+            });
+
+            tagContainers.forEach(container => observer.observe(container));
+        }
+
+        function initScrambleEffects() {
+            const scrambleItems = document.querySelectorAll('.scramble-mono');
+            
+            scrambleItems.forEach(el => {
+                el.setAttribute('data-original-text', el.textContent.trim());
+                el.addEventListener('mouseenter', function() {
+                    scrambleText(this, null, 180);
+                });
+            });
+
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const scrambleObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const targets = entry.target.querySelectorAll('header .scramble-mono');
+                            targets.forEach((target, i) => {
+                                setTimeout(() => {
+                                    scrambleText(target, null, 220);
+                                }, 80 + (i * 40));
+                            });
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.project-item').forEach(item => scrambleObserver.observe(item));
+            }
+        }
+
+        function initAmbientNav() {
+            const header = document.getElementById('mainHeader');
+            if (!header) return;
+
+            let isScrolled = false;
+            function onScrollUpdate() {
+                const scrollY = window.scrollY;
+                const shouldBeScrolled = scrollY > 30;
+
+                if (shouldBeScrolled !== isScrolled) {
+                    isScrolled = shouldBeScrolled;
+                    if (isScrolled) {
+                        header.classList.add('bg-[#f3f3f3]/85', 'dark:bg-[#0c0c0e]/85', 'border-brand-300/80', 'dark:border-brand-800/80', 'shadow-sm');
+                        header.classList.remove('border-transparent', 'bg-transparent');
+                    } else {
+                        header.classList.remove('bg-[#f3f3f3]/85', 'dark:bg-[#0c0c0e]/85', 'border-brand-300/80', 'dark:border-brand-800/80', 'shadow-sm');
+                        header.classList.add('border-transparent', 'bg-transparent');
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', onScrollUpdate, { passive: true });
+            onScrollUpdate();
+        }
+
+        function initMaskedTypography() {
+            const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const elements = document.querySelectorAll('[data-reveal="masked-lines"]');
+            
+            elements.forEach(el => {
+                if (isReduced) {
+                    el.classList.add('is-revealed');
+                    return;
+                }
+                wrapTextNodesIntoMaskedLines(el);
+            });
+
+            if (isReduced) return;
+
+            const textObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const wrappers = entry.target.querySelectorAll('.masked-line-wrap');
+                        wrappers.forEach((w, i) => {
+                            w.style.transitionDelay = `${Math.min(0.35, i * 0.03)}s`;
+                            w.classList.add('is-revealed');
+                        });
+                        entry.target.classList.add('is-revealed');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: '0px 0px -20px 0px'
+            });
+
+            elements.forEach(el => textObserver.observe(el));
+        }
+
+        function wrapTextNodesIntoMaskedLines(container) {
+            const nodes = Array.from(container.childNodes);
+            nodes.forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    const text = node.textContent;
+                    if (!text.trim()) return;
+
+                    const words = text.split(/(\s+)/);
+                    const frag = document.createDocumentFragment();
+
+                    words.forEach(chunk => {
+                        if (chunk.trim()) {
+                            const wrap = document.createElement('span');
+                            wrap.className = 'masked-line-wrap';
+                            const inner = document.createElement('span');
+                            inner.className = 'masked-line-inner';
+                            inner.textContent = chunk;
+                            wrap.appendChild(inner);
+                            frag.appendChild(wrap);
+                        } else if (chunk.length) {
+                            frag.appendChild(document.createTextNode(chunk));
+                        }
+                    });
+
+                    container.replaceChild(frag, node);
+                } else if (node.nodeType === Node.ELEMENT_NODE && !node.classList.contains('masked-line-wrap')) {
+                    if (node.classList.contains('avatar-badge-container')) {
+                        return;
+                    }
+
+                    if (node.tagName.toLowerCase() === 'a') {
+                        const wrap = document.createElement('span');
+                        wrap.className = 'masked-line-wrap';
+                        const inner = document.createElement('span');
+                        inner.className = 'masked-line-inner';
+                        
+                        const clone = node.cloneNode(true);
+                        inner.appendChild(clone);
+                        wrap.appendChild(inner);
+                        container.replaceChild(wrap, node);
+                    } else {
+                        wrapTextNodesIntoMaskedLines(node);
+                    }
+                }
+            });
+        }
+
+        function initScrollReveal() {
+            const elements = document.querySelectorAll('.reveal-on-scroll');
+            if (!elements.length) return;
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                elements.forEach(el => el.classList.add('is-revealed'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-revealed');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px 0px -30px 0px',
+                threshold: 0.05
+            });
+
+            elements.forEach(el => observer.observe(el));
+        }
+
+        function initMobileMenu() {
+            const toggleBtn = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const openIcon = document.getElementById('menuOpenIcon');
+            const closeIcon = document.getElementById('menuCloseIcon');
+            const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+            if (!toggleBtn || !mobileMenu) return;
+
+            toggleBtn.addEventListener('click', function() {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    if (openIcon) openIcon.classList.add('hidden');
+                    if (closeIcon) closeIcon.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    if (openIcon) openIcon.classList.remove('hidden');
+                    if (closeIcon) closeIcon.classList.add('hidden');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    if (openIcon) openIcon.classList.remove('hidden');
+                    if (closeIcon) closeIcon.classList.add('hidden');
+                });
+            });
+        }
+
+        function observeSlideshowVisibility(containerId, startFn, stopFn) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startFn();
+                    } else {
+                        stopFn();
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(container);
+        }
+
+        /* TrailerTrader (Stryx) Slideshow */
+        function initStryxSlideshow() {
+            const dots = document.querySelectorAll('.stryx-dot');
+            if (!dots.length) return;
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showStryxSlide(index);
+                    resetStryxTimer();
+                });
+            });
+
+            observeSlideshowVisibility('stryx-slideshow-container', startStryxTimer, () => clearInterval(stryxTimer));
+        }
+
+        function showStryxSlide(index) {
+            const slides = document.querySelectorAll('.stryx-slide');
+            const dots = document.querySelectorAll('.stryx-dot');
+            if (!slides.length) return;
+
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('opacity-100', idx === index);
+                slide.classList.toggle('opacity-0', idx !== index);
+            });
+
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('bg-white', idx === index);
+                dot.classList.toggle('bg-white/40', idx !== index);
+                dot.classList.toggle('w-3', idx === index);
+                dot.classList.toggle('w-1.5', idx !== index);
+            });
+
+            stryxSlideIndex = index;
+        }
+
+        function startStryxTimer() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            clearInterval(stryxTimer);
+            stryxTimer = setInterval(() => {
+                const slides = document.querySelectorAll('.stryx-slide');
+                if (!slides.length) return;
+                const nextIndex = (stryxSlideIndex + 1) % slides.length;
+                showStryxSlide(nextIndex);
+            }, 2000);
+        }
+
+        function resetStryxTimer() {
+            clearInterval(stryxTimer);
+            startStryxTimer();
+        }
+
+        /* Larus Slideshow */
+        function initLarus2Slideshow() {
+            const dots = document.querySelectorAll('.larus2-dot');
+            if (!dots.length) return;
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showLarus2Slide(index);
+                    resetLarus2Timer();
+                });
+            });
+
+            observeSlideshowVisibility('larus2-slideshow-container', startLarus2Timer, () => clearInterval(larus2Timer));
+        }
+
+        function showLarus2Slide(index) {
+            const slides = document.querySelectorAll('.larus2-slide');
+            const dots = document.querySelectorAll('.larus2-dot');
+            if (!slides.length) return;
+
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('opacity-100', idx === index);
+                slide.classList.toggle('opacity-0', idx !== index);
+            });
+
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('bg-white', idx === index);
+                dot.classList.toggle('bg-white/40', idx !== index);
+                dot.classList.toggle('w-3', idx === index);
+                dot.classList.toggle('w-1.5', idx !== index);
+            });
+
+            larus2SlideIndex = index;
+        }
+
+        function startLarus2Timer() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            clearInterval(larus2Timer);
+            larus2Timer = setInterval(() => {
+                const slides = document.querySelectorAll('.larus2-slide');
+                if (!slides.length) return;
+                const nextIndex = (larus2SlideIndex + 1) % slides.length;
+                showLarus2Slide(nextIndex);
+            }, 2000);
+        }
+
+        function resetLarus2Timer() {
+            clearInterval(larus2Timer);
+            startLarus2Timer();
+        }
+
+        /* RocketAir / Terraformation Slideshow */
+        function initRocketAirSlideshow() {
+            const dots = document.querySelectorAll('.rocketair-dot');
+            if (!dots.length) return;
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showRocketAirSlide(index);
+                    resetRocketAirTimer();
+                });
+            });
+
+            observeSlideshowVisibility('rocketair-slideshow-container', startRocketAirTimer, () => clearInterval(rocketairTimer));
+        }
+
+        function showRocketAirSlide(index) {
+            const slides = document.querySelectorAll('.rocketair-slide');
+            const dots = document.querySelectorAll('.rocketair-dot');
+            if (!slides.length) return;
+
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('opacity-100', idx === index);
+                slide.classList.toggle('opacity-0', idx !== index);
+            });
+
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('bg-white', idx === index);
+                dot.classList.toggle('bg-white/40', idx !== index);
+                dot.classList.toggle('w-3', idx === index);
+                dot.classList.toggle('w-1.5', idx !== index);
+            });
+
+            rocketairSlideIndex = index;
+        }
+
+        function startRocketAirTimer() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            clearInterval(rocketairTimer);
+            rocketairTimer = setInterval(() => {
+                const slides = document.querySelectorAll('.rocketair-slide');
+                if (!slides.length) return;
+                const nextIndex = (rocketairSlideIndex + 1) % slides.length;
+                showRocketAirSlide(nextIndex);
+            }, 2000);
+        }
+
+        function resetRocketAirTimer() {
+            clearInterval(rocketairTimer);
+            startRocketAirTimer();
+        }
+
+        /* MCIM (Rig) Slideshow */
+        function initRigSlideshow() {
+            const dots = document.querySelectorAll('.rig-dot');
+            if (!dots.length) return;
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showRigSlide(index);
+                    resetRigTimer();
+                });
+            });
+
+            observeSlideshowVisibility('rig-slideshow-container', startRigTimer, () => clearInterval(rigTimer));
+        }
+
+        function showRigSlide(index) {
+            const slides = document.querySelectorAll('.rig-slide');
+            const dots = document.querySelectorAll('.rig-dot');
+            if (!slides.length) return;
+
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('opacity-100', idx === index);
+                slide.classList.toggle('opacity-0', idx !== index);
+            });
+
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('bg-white', idx === index);
+                dot.classList.toggle('bg-white/40', idx !== index);
+                dot.classList.toggle('w-3', idx === index);
+                dot.classList.toggle('w-1.5', idx !== index);
+            });
+
+            rigSlideIndex = index;
+        }
+
+        function startRigTimer() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            clearInterval(rigTimer);
+            rigTimer = setInterval(() => {
+                const slides = document.querySelectorAll('.rig-slide');
+                if (!slides.length) return;
+                const nextIndex = (rigSlideIndex + 1) % slides.length;
+                showRigSlide(nextIndex);
+            }, 2000);
+        }
+
+        function resetRigTimer() {
+            clearInterval(rigTimer);
+            startRigTimer();
+        }
+
+        /* OatFi / SECLOCK Slideshow */
+        function initOatfiSlideshow() {
+            const dots = document.querySelectorAll('.oatfi-dot');
+            if (!dots.length) return;
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showOatfiSlide(index);
+                    resetOatfiTimer();
+                });
+            });
+
+            observeSlideshowVisibility('oatfi-slideshow-container', startOatfiTimer, () => clearInterval(oatfiTimer));
+        }
+
+        function showOatfiSlide(index) {
+            const slides = document.querySelectorAll('.oatfi-slide');
+            const dots = document.querySelectorAll('.oatfi-dot');
+            if (!slides.length) return;
+
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('opacity-100', idx === index);
+                slide.classList.toggle('opacity-0', idx !== index);
+            });
+
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('bg-white', idx === index);
+                dot.classList.toggle('bg-white/40', idx !== index);
+                dot.classList.toggle('w-3', idx === index);
+                dot.classList.toggle('w-1.5', idx !== index);
+            });
+
+            oatfiSlideIndex = index;
+        }
+
+        function startOatfiTimer() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            clearInterval(oatfiTimer);
+            oatfiTimer = setInterval(() => {
+                const slides = document.querySelectorAll('.oatfi-slide');
+                if (!slides.length) return;
+                const nextIndex = (oatfiSlideIndex + 1) % slides.length;
+                showOatfiSlide(nextIndex);
+            }, 2000);
+        }
+
+        function resetOatfiTimer() {
+            clearInterval(oatfiTimer);
+            startOatfiTimer();
+        }
+
+        /* Olive / Terraformation Slideshow */
+        function initOliveSlideshow() {
+            const dots = document.querySelectorAll('.olive-dot');
+            if (!dots.length) return;
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showOliveSlide(index);
+                    resetOliveTimer();
+                });
+            });
+
+            observeSlideshowVisibility('olive-slideshow-container', startOliveTimer, () => clearInterval(oliveTimer));
+        }
+
+        function showOliveSlide(index) {
+            const slides = document.querySelectorAll('.olive-slide');
+            const dots = document.querySelectorAll('.olive-dot');
+            if (!slides.length) return;
+
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('opacity-100', idx === index);
+                slide.classList.toggle('opacity-0', idx !== index);
+            });
+
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('bg-white', idx === index);
+                dot.classList.toggle('bg-white/40', idx !== index);
+                dot.classList.toggle('w-3', idx === index);
+                dot.classList.toggle('w-1.5', idx !== index);
+            });
+
+            oliveSlideIndex = index;
+        }
+
+        function startOliveTimer() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            clearInterval(oliveTimer);
+            oliveTimer = setInterval(() => {
+                const slides = document.querySelectorAll('.olive-slide');
+                if (!slides.length) return;
+                const nextIndex = (oliveSlideIndex + 1) % slides.length;
+                showOliveSlide(nextIndex);
+            }, 2000);
+        }
+
+        function resetOliveTimer() {
+            clearInterval(oliveTimer);
+            startOliveTimer();
+        }
+
+        function triggerBadgePop(el) {
+            if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            el.classList.add('is-popped');
+            setTimeout(() => {
+                el.classList.remove('is-popped');
+            }, 1800);
+        }
+
+        function initSmoothVideoLoop() {
+            const video = document.getElementById('cargosprintVideo');
+            const video2 = document.getElementById('larus2Video');
+
+            function bindLoop(vid) {
+                if (!vid) return;
+                let isResetting = false;
+
+                function checkLoop() {
+                    if (vid.duration && !isResetting) {
+                        if (vid.currentTime >= Math.max(vid.duration - 0.12, 0.1)) {
+                            isResetting = true;
+                            vid.currentTime = 0.01;
+                            vid.play().catch(() => {});
+                            setTimeout(() => { isResetting = false; }, 120);
+                        }
+                    }
+                    requestAnimationFrame(checkLoop);
+                }
+
+                vid.addEventListener('loadedmetadata', () => {
+                    requestAnimationFrame(checkLoop);
+                });
+
+                vid.addEventListener('ended', () => {
+                    vid.currentTime = 0.01;
+                    vid.play().catch(() => {});
+                });
+
+                if (vid.readyState >= 1) {
+                    requestAnimationFrame(checkLoop);
+                }
+
+                vid.play().catch(() => {});
+            }
+
+            bindLoop(video);
+            bindLoop(video2);
+        }
+
+        /* Viewport-based Lazy Loading for Videos */
+        function initLazyVideos() {
+            const lazyVideos = document.querySelectorAll('video[data-src]');
+            if (!lazyVideos.length) return;
+
+            if ('IntersectionObserver' in window) {
+                const videoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        const video = entry.target;
+                        if (entry.isIntersecting) {
+                            if (!video.src && video.dataset.src) {
+                                video.src = video.dataset.src;
+                                video.load();
+                                const card = video.closest('.bento-card');
+                                if (card) card.classList.add('is-img-ready');
+                            }
+                            video.play().catch(() => {});
+                        } else {
+                            if (video.src) {
+                                video.pause();
+                            }
+                        }
+                    });
+                }, {
+                    rootMargin: '250px 0px 250px 0px',
+                    threshold: 0.05
+                });
+
+                lazyVideos.forEach(v => videoObserver.observe(v));
+            } else {
+                lazyVideos.forEach(video => {
+                    if (video.dataset.src) {
+                        video.src = video.dataset.src;
+                        video.load();
+                        video.play().catch(() => {});
+                    }
+                });
+            }
+        }
+
+        function initEasyImageLoading() {
+            const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const images = document.querySelectorAll('.bento-card img, .lab-img-wrap img');
+
+            images.forEach(img => {
+                const parentCard = img.closest('.bento-card, .lab-img-wrap');
+                const isSlideshowSlide = img.className.includes('-slide');
+
+                if (isReduced) {
+                    if (parentCard) parentCard.classList.add('is-img-ready');
+                    return;
+                }
+
+                if (!isSlideshowSlide) {
+                    img.classList.add('img-easy-load');
+                }
+
+                const handleLoadComplete = () => {
+                    if (!isSlideshowSlide) {
+                        img.classList.add('is-loaded');
+                    }
+                    if (parentCard) {
+                        parentCard.classList.add('is-img-ready');
+                    }
+                };
+
+                if (img.complete && img.naturalWidth > 0) {
+                    handleLoadComplete();
+                } else {
+                    img.addEventListener('load', handleLoadComplete, { once: true });
+                    img.addEventListener('error', handleLoadComplete, { once: true });
+                }
+            });
+        }
+
+        function createEmojiBurst(x, y) {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+            const emojis = ['👋', '🚀', '💻', '✨', '🔥'];
+            const numParticles = 14;
+
+            for (let i = 0; i < numParticles; i++) {
+                const particle = document.createElement('div');
+                particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                particle.style.position = 'fixed';
+                particle.style.left = '0px';
+                particle.style.top = '0px';
+                particle.style.fontSize = (Math.random() * 12 + 16) + 'px';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '9999';
+                particle.style.willChange = 'transform, opacity';
+                document.body.appendChild(particle);
+
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = Math.random() * 7 + 4;
+                let vx = Math.cos(angle) * velocity;
+                let vy = Math.sin(angle) * velocity - 6; 
+                let rotation = Math.random() * 360;
+                const rotationSpeed = (Math.random() - 0.5) * 15;
+                const gravity = 0.4;
+                let opacity = 1;
+                let scale = Math.random() * 0.5 + 0.75;
+                
+                let currentX = x;
+                let currentY = y;
+
+                function animate() {
+                    vy += gravity;
+                    currentX += vx;
+                    currentY += vy;
+                    rotation += rotationSpeed;
+                    
+                    if (vy > 0) {
+                        opacity -= 0.015;
+                    }
+
+                    if (opacity <= 0) {
+                        particle.remove();
+                        return;
+                    }
+
+                    particle.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) rotate(${rotation}deg) scale(${scale})`;
+                    particle.style.opacity = opacity;
+
+                    requestAnimationFrame(animate);
+                }
+                
+                requestAnimationFrame(animate);
+            }
+        }
+
+        function copyEmail(event) {
+            const email = "matthieubrissette@gmail.com";
+            
+            if (event) {
+                let x = event.clientX;
+                let y = event.clientY;
+                
+                if (!x && !y && event.target) {
+                    const rect = event.target.getBoundingClientRect();
+                    x = rect.left + rect.width / 2;
+                    y = rect.top + rect.height / 2;
+                }
+                
+                createEmojiBurst(x, y);
+            }
+
+            fallbackCopy(email);
+        }
+
+        function fallbackCopy(text) {
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand("copy");
+                showToast();
+            } catch (e) {
+                console.error("Copy failed", e);
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function initFooterTextFit() {
+            const svg = document.getElementById('footerNameSvg');
+            const text = document.getElementById('footerNameText');
+            if (!svg || !text) return;
+
+            function updateBbox() {
+                try {
+                    const bbox = text.getBBox();
+                    if (bbox && bbox.width > 0 && bbox.height > 0) {
+                        svg.setAttribute('viewBox', `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
+                    }
+                } catch (e) {}
+            }
+
+            updateBbox();
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(updateBbox);
+            }
+            window.addEventListener('resize', updateBbox);
+        }
+
+        function initLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxVideo = document.getElementById('lightboxVideo');
+            const closeBtn = document.getElementById('lightboxClose');
+            const mediaElements = document.querySelectorAll('.bento-card img, .bento-card video, .lab-img-wrap img');
+
+            // Attach click listeners to all project media and lab images
+            mediaElements.forEach(el => {
+                el.classList.add('clickable-img');
+                el.addEventListener('click', function(e) {
+                    // Prevent hidden slides from opening
+                    if (this.classList.contains('opacity-0')) return;
+                    
+                    e.stopPropagation();
+
+                    if (this.tagName.toLowerCase() === 'video') {
+                        if (lightboxImg) lightboxImg.classList.add('hidden');
+                        if (lightboxVideo) {
+                            lightboxVideo.src = this.currentSrc || this.src || this.dataset.src;
+                            lightboxVideo.classList.remove('hidden');
+                            lightboxVideo.play().catch(() => {});
+                        }
+                    } else {
+                        if (lightboxVideo) {
+                            lightboxVideo.pause();
+                            lightboxVideo.classList.add('hidden');
+                            lightboxVideo.src = '';
+                        }
+                        if (lightboxImg) {
+                            lightboxImg.src = this.src;
+                            lightboxImg.alt = this.alt || 'Fullscreen view';
+                            lightboxImg.classList.remove('hidden');
+                        }
+                    }
+
+                    lightbox.classList.add('is-active');
+                    document.body.classList.add('lightbox-open');
+                });
+            });
+
+            // Smooth loop handler for the lightbox video to prevent EOF flash
+            if (lightboxVideo) {
+                let isLightboxResetting = false;
+                lightboxVideo.addEventListener('timeupdate', () => {
+                    if (lightboxVideo.duration && !isLightboxResetting) {
+                        if (lightboxVideo.currentTime >= Math.max(lightboxVideo.duration - 0.12, 0.1)) {
+                            isLightboxResetting = true;
+                            lightboxVideo.currentTime = 0.01;
+                            lightboxVideo.play().catch(() => {});
+                            setTimeout(() => { isLightboxResetting = false; }, 120);
+                        }
+                    }
+                });
+            }
+
+            // Close functionality
+            function closeLightbox() {
+                lightbox.classList.remove('is-active');
+                document.body.classList.remove('lightbox-open');
+                if (lightboxVideo) {
+                    lightboxVideo.pause();
+                }
+                setTimeout(() => { 
+                    if (!lightbox.classList.contains('is-active')) {
+                        if (lightboxImg) lightboxImg.src = '';
+                        if (lightboxVideo) lightboxVideo.src = '';
+                    }
+                }, 300);
+            }
+
+            // Close on overlay click or close button click
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightboxVideo) return;
+                closeLightbox();
+            });
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeLightbox();
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('is-active')) {
+                    closeLightbox();
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            initNativeScroll();
+            initAmbientNav();
+            initMaskedTypography();
+            initScrollReveal();
+            initTagPills();
+            initMobileMenu();
+            initEasyImageLoading();
+            initLazyVideos();
+            initStryxSlideshow();
+            initLarus2Slideshow();
+            initRocketAirSlideshow();
+            initRigSlideshow();
+            initOatfiSlideshow();
+            initOliveSlideshow();
+            initSmoothVideoLoop();
+            initScrambleEffects();
+            initFooterTextFit();
+            initLightbox();
+        });
+    </script>
+</body>
+</html>
