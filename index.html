@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matt Brissette — Interactive & Digital Experience Designer</title>
+    <title>Matt Brissette — Designer Portfolio</title>
     
     <link rel="preconnect" href="https://mbrissette.x02.me" crossorigin>
     <link rel="dns-prefetch" href="https://mbrissette.x02.me">
@@ -267,20 +267,21 @@
         }
 
         /* Slideshow image optimization */
-        .stryx-slide, .rocketair-slide, .rig-slide, .oatfi-slide, .cargosprint-slide, .olive-slide, .larus2-slide {
+        .stryx-slide, .rocketair-slide, .rig-slide, .oatfi-slide, .olive-slide, .larus2-slide, .rocketair-proj-slide {
             will-change: opacity;
             transform: translateZ(0);
             backface-visibility: hidden;
         }
 
         .stryx-slide.opacity-100, .rocketair-slide.opacity-100,
-        .rig-slide.opacity-100, .oatfi-slide.opacity-100, .olive-slide.opacity-100, .larus2-slide.opacity-100 {
+        .rig-slide.opacity-100, .oatfi-slide.opacity-100, .olive-slide.opacity-100, .larus2-slide.opacity-100, .rocketair-proj-slide.opacity-100 {
             opacity: 1 !important;
         }
 
         .stryx-slide.opacity-0, .rocketair-slide.opacity-0,
-        .rig-slide.opacity-0, .oatfi-slide.opacity-0, .olive-slide.opacity-0, .larus2-slide.opacity-0 {
+        .rig-slide.opacity-0, .oatfi-slide.opacity-0, .olive-slide.opacity-0, .larus2-slide.opacity-0, .rocketair-proj-slide.opacity-0 {
             opacity: 0 !important;
+            pointer-events: none;
         }
 
         /* Monospace Decryption & Scramble Styling */
@@ -460,20 +461,7 @@
             visibility: visible;
         }
 
-        .lightbox-img {
-            max-width: 90vw;
-            max-height: 90vh;
-            object-fit: contain;
-            transform: scale(0.95);
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border-radius: 4px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .lightbox-overlay.is-active .lightbox-img {
-            transform: scale(1);
-        }
-
+        .lightbox-img,
         .lightbox-video {
             max-width: 90vw;
             max-height: 90vh;
@@ -484,6 +472,7 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
+        .lightbox-overlay.is-active .lightbox-img,
         .lightbox-overlay.is-active .lightbox-video {
             transform: scale(1);
         }
@@ -494,12 +483,6 @@
 
         body.lightbox-open {
             overflow: hidden;
-        }
-
-        /* Ensure hidden slides can't intercept clicks */
-        .stryx-slide.opacity-0, .rocketair-slide.opacity-0,
-        .rig-slide.opacity-0, .oatfi-slide.opacity-0, .olive-slide.opacity-0, .larus2-slide.opacity-0 {
-            pointer-events: none;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -606,21 +589,22 @@
             </div>
         </section>
 
+        <!-- PROJECTS CONTAINER -->
         <div id="projects" class="space-y-16 sm:space-y-24">
 
             <!-- PROJECT 1: OatFi -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,User Map,Information Architecture,Email Design,Design System,Illustration,Brand Evolution,Marketing Assets" data-context="01 / 06 OatFi">
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,User Map,Information Architecture,Email Design,Design System,Illustration,Brand Evolution,Marketing Assets" data-context="01 / 07 OatFi">
                 <header class="flex items-baseline justify-between line-draw-b pb-3">
                     <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
                         <span>OatFi</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">01 / 06</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">01 / 07</span>
                     </h2>
                     <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B, Fintech</span>
                 </header>
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
                     <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/dFBmt6.webp" loading="eager" fetchpriority="high" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=Terraformation+1'" alt="Terraformation 1" class="w-full h-full object-cover rounded-xl" />
+                        <img src="https://mbrissette.x02.me/i/dFBmt6.webp" loading="eager" fetchpriority="high" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=OatFi+1'" alt="OatFi 1" class="w-full h-full object-cover rounded-xl" />
                     </div>
 
                     <div class="md:col-span-6 bg-[#1E2329] dark:bg-[#1E2329] border-0 rounded-xl bento-card is-img-ready relative overflow-hidden group flex items-center justify-center" style="background-color: #1E2329; border: none;">
@@ -628,17 +612,17 @@
                     </div>
 
                     <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/dW9K3Q.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Terraformation+3'" alt="Terraformation 3" class="w-full h-full object-cover rounded-xl" />
+                        <img src="https://mbrissette.x02.me/i/dW9K3Q.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=OatFi+3'" alt="OatFi 3" class="w-full h-full object-cover rounded-xl" />
                     </div>
 
-                    <!-- Card 4: Terraformation 6-Image Slideshow -->
+                    <!-- Card 4: OatFi 6-Image Slideshow -->
                     <div id="olive-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/zAvFrG.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4a'" alt="Terraformation - Sequence 1" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
-                        <img src="https://mbrissette.x02.me/i/VYcYcE.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4b'" alt="Terraformation - Sequence 2" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/HVdRFk.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4c'" alt="Terraformation - Sequence 3" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/oaKqbf.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4d'" alt="Terraformation - Sequence 4" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/tLS83n.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4e'" alt="Terraformation - Sequence 5" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/tn59sw.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4f'" alt="Terraformation - Sequence 6" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/zAvFrG.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=OatFi+4a'" alt="OatFi - Sequence 1" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/VYcYcE.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=OatFi+4b'" alt="OatFi - Sequence 2" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/HVdRFk.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=OatFi+4c'" alt="OatFi - Sequence 3" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/oaKqbf.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=OatFi+4d'" alt="OatFi - Sequence 4" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/tLS83n.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=OatFi+4e'" alt="OatFi - Sequence 5" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/tn59sw.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=OatFi+4f'" alt="OatFi - Sequence 6" class="olive-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
                         
                         <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
                             <span class="olive-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
@@ -651,7 +635,7 @@
                     </div>
 
                     <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/B3gqtF.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Terraformation+5'" alt="Terraformation 5" class="w-full h-full object-cover rounded-xl" />
+                        <img src="https://mbrissette.x02.me/i/B3gqtF.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=OatFi+5'" alt="OatFi 5" class="w-full h-full object-cover rounded-xl" />
                     </div>
                 </div>
 
@@ -693,11 +677,11 @@
             </article>
 
             <!-- PROJECT 2: Larus -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Interactive 3D,Web Design &amp; UX,AI-Assisted Build,Lead Capture,Design System,Art Direction,Brand Guidelines,Brand Evolution" data-context="02 / 06 Larus">
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Interactive 3D,Web Design &amp; UX,AI-Assisted Build,Lead Capture,Design System,Art Direction,Brand Guidelines,Brand Evolution" data-context="02 / 07 Larus">
                 <header class="flex items-baseline justify-between line-draw-b pb-3">
                     <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
                         <span>Larus</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">02 / 06</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">02 / 07</span>
                     </h2>
                     <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B / B2G, Defence Tech</span>
                 </header>
@@ -773,11 +757,11 @@
             </article>
 
             <!-- PROJECT 3: SECLOCK -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,E-Commerce,Information Architecture,Email Design,Marketing Website,Design System,Brand Evolution" data-context="03 / 06 SECLOCK">
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,E-Commerce,Information Architecture,Email Design,Marketing Website,Design System,Brand Evolution" data-context="03 / 07 SECLOCK">
                 <header class="flex items-baseline justify-between line-draw-b pb-3">
                     <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
                         <span>SECLOCK</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">03 / 06</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">03 / 07</span>
                     </h2>
                     <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B, Industrial Supplies</span>
                 </header>
@@ -785,7 +769,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
                     <!-- Big Full-Width Image (Image 01) at the TOP -->
                     <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/7XSBX3.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=Larus+1'" alt="Larus 1" class="w-full h-full object-cover rounded-xl" />
+                        <img src="https://mbrissette.x02.me/i/7XSBX3.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=SECLOCK+1'" alt="SECLOCK 1" class="w-full h-full object-cover rounded-xl" />
                     </div>
 
                     <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
@@ -798,10 +782,10 @@
 
                     <!-- Card 4: SECLOCK 5-Image Slideshow -->
                     <div id="oatfi-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/7342F.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+Sequence+1'" alt="Larus - Sequence 1" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
-                        <img src="https://mbrissette.x02.me/i/AVGM8.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+Sequence+2'" alt="Larus - Sequence 2" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/GKZNFQ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+Sequence+3'" alt="Larus - Sequence 3" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/dDCTiM.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+Sequence+4'" alt="Larus - Sequence 4" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/7342F.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=SECLOCK+Sequence+1'" alt="SECLOCK - Sequence 1" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/AVGM8.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=SECLOCK+Sequence+2'" alt="SECLOCK - Sequence 2" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/GKZNFQ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=SECLOCK+Sequence+3'" alt="SECLOCK - Sequence 3" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/dDCTiM.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=SECLOCK+Sequence+4'" alt="SECLOCK - Sequence 4" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
                         <img src="https://mbrissette.x02.me/i/25kMu1.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=SECLOCK+Sequence+5'" alt="SECLOCK - Sequence 5" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
                         
                         <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
@@ -813,9 +797,9 @@
                         </div>
                     </div>
 
-                    <!-- Card 5: Larus Banners / Collateral -->
+                    <!-- Card 5: SECLOCK Banners / Collateral -->
                     <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/AGN5.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+Footer+and+Identity'" alt="Larus Digital Platform and Identity" class="w-full h-full object-cover rounded-xl" />
+                        <img src="https://mbrissette.x02.me/i/AGN5.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=SECLOCK+Footer+and+Identity'" alt="SECLOCK Digital Platform and Identity" class="w-full h-full object-cover rounded-xl" />
                     </div>
                 </div>
 
@@ -846,11 +830,11 @@
             </article>
 
             <!-- PROJECT 4: Terraformation -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Landing Page,Content Design,Marketing Assets" data-context="04 / 06 Terraformation">
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Landing Page,Content Design,Marketing Assets" data-context="04 / 07 Terraformation">
                 <header class="flex items-baseline justify-between line-draw-b pb-3">
                     <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
                         <span>Terraformation</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">04 / 06</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">04 / 07</span>
                     </h2>
                     <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B, Climate Tech</span>
                 </header>
@@ -911,82 +895,12 @@
                 </div>
             </article>
 
-            <!-- PROJECT 5: TrailerTrader -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Dashboard Design,Web Design &amp; UX,E-Commerce,Mobile-First,Design System,Lead Generation" data-context="05 / 06 TrailerTrader">
-                <header class="flex items-baseline justify-between line-draw-b pb-3">
-                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
-                        <span>TrailerTrader</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">05 / 06</span>
-                    </h2>
-                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B/B2C Marketplace</span>
-                </header>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/LlBc6w.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=TrailerTrader+1'" alt="TrailerTrader 1" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/JTs4EC.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=TrailerTrader+2'" alt="TrailerTrader 2" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/ZdU2l7.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=TrailerTrader+3'" alt="TrailerTrader 3" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <!-- Card 4: TrailerTrader 5-Image Slideshow -->
-                    <div id="stryx-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/oOfraK.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4a'" alt="TrailerTrader - Sequence 1" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
-                        <img src="https://mbrissette.x02.me/i/D6mZmo.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4b'" alt="TrailerTrader - Sequence 2" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/E8XMAy.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4c'" alt="TrailerTrader - Sequence 3" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/OJL7la.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4d'" alt="TrailerTrader - Sequence 4" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/Duj81g.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4e'" alt="TrailerTrader - Sequence 5" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        
-                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
-                            <span class="stryx-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
-                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/uCEql1.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/500x500/18181b/ffffff?text=TrailerTrader+5'" alt="TrailerTrader 5" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-                </div>
-
-                <div class="space-y-5 pt-2">
-                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
-                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Dashboard Design</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">E-Commerce</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Mobile-First</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Design System</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Lead Generation</span>
-                    </div>
-
-                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
-                        <p data-reveal="masked-lines">
-                            As TrailerTrader became the leading marketplace in its category, its existing product needed to evolve to support increased traffic, modern buyer expectations, and a more sophisticated dealer ecosystem.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            A major hurdle for many buyers was knowing they needed a trailer but feeling overwhelmed by technical specs and unsure of which category suited their needs. To solve this, we introduced a guided recommendation tool that lets shoppers answer a few quick questions about their haul, towing capacity, and usage, instantly pointing them to the ideal trailer type.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            I created a comprehensive design system, designed a new dashboard for dealers, and delivered a faster, mobile-first experience with simpler navigation and stronger lead generation for dealers. This created more direct connections between buyers and dealers while providing a scalable foundation for future feature releases.
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PROJECT 6: MCIM -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Wireframes,PowerPoint Template &amp; Deck,Iconography,Art Direction,Brand Guidelines,Brand Evolution" data-context="06 / 06 MCIM">
+            <!-- PROJECT 5: MCIM -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Wireframes,PowerPoint Template &amp; Deck,Iconography,Art Direction,Brand Guidelines,Brand Evolution" data-context="05 / 07 MCIM">
                 <header class="flex items-baseline justify-between line-draw-b pb-3">
                     <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
                         <span>MCIM</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">06 / 06</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">05 / 07</span>
                     </h2>
                     <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B SaaS</span>
                 </header>
@@ -1059,6 +973,165 @@
                 </div>
             </article>
 
+            <!-- PROJECT 6: RocketAir -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Creative Strategy,Editorial Typography,Art Direction,Motion Concept,Brand Identity" data-context="06 / 07 RocketAir">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>RocketAir</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">06 / 07</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">Design &amp; Technology</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/1lCyoM.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=RocketAir+1'" alt="RocketAir 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/9TX0z7.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=RocketAir+2'" alt="RocketAir 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/l6km94.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=RocketAir+3'" alt="RocketAir 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div id="rocketair-project-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/PXOi49.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4a'" alt="RocketAir - Sequence 1" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/ceFgmX.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4b'" alt="RocketAir - Sequence 2" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/c5C1bB.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4c'" alt="RocketAir - Sequence 3" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/TL5b8R.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4d'" alt="RocketAir - Sequence 4" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="rocketair-proj-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-proj-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-proj-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-proj-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: RocketAir 5 -->
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/UZAS3G.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=RocketAir+5'" alt="RocketAir 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Creative Strategy</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Editorial Typography</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Art Direction</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Motion Concept</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Identity</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            A digital experience created in collaboration with RocketAir, blending creative strategy, thoughtful design, and high-impact visuals into a modern, engaging web experience.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            Visuals were inspired by editorial/brutalist design, using bold typography as the visual anchor. A lo-fi space theme is contrasted against a bright neon yellow accent, set against a high-contrast, near-monochrome black-and-white base.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            The whole experience was designed with motion in mind, with content sitting at the corners and edges rather than centered, leaving generous negative space to breathe.
+                        </p>
+                        <div class="pt-1">
+                            <a href="https://www.rocketair.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm sm:text-base font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 dark:hover:decoration-brand-100 transition-colors group">
+                                <span class="font-medium group-hover:text-brand-900 dark:group-hover:text-white">rocketair.com</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 lg:w-4/5">
+                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2">
+                            <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">Awwwards</h4>
+                            <p class="text-xs sm:text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                                Awarded Site of the Day and the Developer Award for balancing innovative design with quality code.
+                            </p>
+                        </div>
+                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2">
+                            <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">CSS Design Awards</h4>
+                            <p class="text-xs sm:text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                                Selected as Website of the Day alongside public-voted category sweeps for Best UI Design, Best UX Design, and Best Innovation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 7: TrailerTrader -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Dashboard Design,Web Design &amp; UX,E-Commerce,Mobile-First,Design System,Lead Generation" data-context="07 / 07 TrailerTrader">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>TrailerTrader</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">07 / 07</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B/B2C Marketplace</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/LlBc6w.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=TrailerTrader+1'" alt="TrailerTrader 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/JTs4EC.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=TrailerTrader+2'" alt="TrailerTrader 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/ZdU2l7.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=TrailerTrader+3'" alt="TrailerTrader 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <!-- Card 4: TrailerTrader 5-Image Slideshow -->
+                    <div id="stryx-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/oOfraK.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4a'" alt="TrailerTrader - Sequence 1" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/D6mZmo.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4b'" alt="TrailerTrader - Sequence 2" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/E8XMAy.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4c'" alt="TrailerTrader - Sequence 3" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/OJL7la.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4d'" alt="TrailerTrader - Sequence 4" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/Duj81g.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4e'" alt="TrailerTrader - Sequence 5" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="stryx-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/uCEql1.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/500x500/18181b/ffffff?text=TrailerTrader+5'" alt="TrailerTrader 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Dashboard Design</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">E-Commerce</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Mobile-First</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Design System</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Lead Generation</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            As TrailerTrader became the leading marketplace in its category, its existing product needed to evolve to support increased traffic, modern buyer expectations, and a more sophisticated dealer ecosystem.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            A major hurdle for many buyers was knowing they needed a trailer but feeling overwhelmed by technical specs and unsure of which category suited their needs. To solve this, we introduced a guided recommendation tool that lets shoppers answer a few quick questions about their haul, towing capacity, and usage, instantly pointing them to the ideal trailer type.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I created a comprehensive design system, designed a new dashboard for dealers, and delivered a faster, mobile-first experience with simpler navigation and stronger lead generation for dealers. This created more direct connections between buyers and dealers while providing a scalable foundation for future feature releases.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
         </div>
 
         <!-- LAB SECTION -->
@@ -1066,22 +1139,7 @@
             <h2 class="text-lg font-semibold tracking-tight text-brand-900 dark:text-brand-100" data-reveal="masked-lines">Lab</h2>
 
             <div class="divide-y divide-brand-300/80 dark:divide-brand-800">
-                <!-- LAB PROJECT 1: RocketAir -->
-                <div class="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 group reveal-on-scroll">
-                    <div class="w-full sm:w-48 aspect-[3/2] shrink-0 border border-brand-200/80 dark:border-brand-800 rounded-xl overflow-hidden bg-brand-100 dark:bg-brand-900 relative lab-img-wrap">
-                        <img src="https://mbrissette.x02.me/i/W57QZ.webp" alt="RocketAir website" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/18181b/ffffff?text=RocketAir'" />
-                    </div>
-                    <div class="flex-1 space-y-2">
-                        <p class="text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
-                            Client project, built in collaboration with RocketAir. A motion-led website with bold editorial typography and a neon yellow accent on a black-and-white base. Awwwards Site of the Day and Developer Award, CSS Design Awards Website of the Day.
-                        </p>
-                        <a href="https://www.rocketair.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 transition-colors font-medium">
-                            rocketair.com <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-60"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- LAB PROJECT 2: Kinetic Columns -->
+                <!-- LAB PROJECT 1: Kinetic Columns -->
                 <div class="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 group reveal-on-scroll">
                     <div class="w-full sm:w-48 aspect-[3/2] shrink-0 border border-brand-200/80 dark:border-brand-800 rounded-xl overflow-hidden bg-brand-100 dark:bg-brand-900 relative lab-img-wrap">
                         <img src="https://mbrissette.x02.me/i/3U4H.webp" alt="Kinetic Columns 3D Exploration" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/18181b/ffffff?text=Kinetic+Columns'" />
@@ -1096,7 +1154,7 @@
                     </div>
                 </div>
 
-                <!-- LAB PROJECT 3: Glass Cube -->
+                <!-- LAB PROJECT 2: Glass Cube -->
                 <div class="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 group reveal-on-scroll">
                     <div class="w-full sm:w-48 aspect-[3/2] shrink-0 border border-brand-200/80 dark:border-brand-800 rounded-xl overflow-hidden bg-brand-100 dark:bg-brand-900 relative lab-img-wrap">
                         <img src="https://mbrissette.x02.me/i/8GXTD.webp" alt="Glass Cube 3D Experience" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/18181b/ffffff?text=Glass+Cube'" />
@@ -1111,7 +1169,7 @@
                     </div>
                 </div>
 
-                <!-- LAB PROJECT 4: Loam — Spatial Search Engine -->
+                <!-- LAB PROJECT 3: Loam — Spatial Search Engine -->
                 <div class="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 group reveal-on-scroll">
                     <div class="w-full sm:w-48 aspect-[3/2] shrink-0 border border-brand-200/80 dark:border-brand-800 rounded-xl overflow-hidden bg-brand-100 dark:bg-brand-900 relative lab-img-wrap">
                         <img src="https://mbrissette.x02.me/i/O1mFjc.webp" alt="Loam — Spatial Search Engine" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/18181b/ffffff?text=Loam'" />
@@ -1202,7 +1260,6 @@
     <!-- MONUMENTAL CONTAINER-ALIGNED FOOTER -->
     <footer class="relative z-10 border-t border-brand-300/80 dark:border-brand-800 pt-10 sm:pt-14 pb-12 sm:pb-16 overflow-hidden select-none transition-colors">
         <div class="max-w-7xl mx-auto px-5 sm:px-8 space-y-6 sm:space-y-8">
-            <!-- Monumental Typographic Signature -->
             <div class="w-full overflow-hidden leading-none cursor-default py-1">
                 <svg id="footerNameSvg" viewBox="0 0 905 84" class="w-full h-auto block select-none overflow-visible" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Matt Brissette">
                     <text id="footerNameText" x="0" y="82" class="footer-name-svg">MATT BRISSETTE</text>
@@ -1245,6 +1302,9 @@
 
         let oliveSlideIndex = 0;
         let oliveTimer = null;
+
+        let rocketairProjSlideIndex = 0;
+        let rocketairProjTimer = null;
 
         /* Smooth Anchor Scroll Navigation */
         function initNativeScroll() {
@@ -1554,7 +1614,7 @@
             observer.observe(container);
         }
 
-        /* TrailerTrader (Stryx) Slideshow */
+        /* 07 TrailerTrader (Stryx) Slideshow */
         function initStryxSlideshow() {
             const dots = document.querySelectorAll('.stryx-dot');
             if (!dots.length) return;
@@ -1606,7 +1666,7 @@
             startStryxTimer();
         }
 
-        /* Larus Slideshow */
+        /* 02 Larus Slideshow */
         function initLarus2Slideshow() {
             const dots = document.querySelectorAll('.larus2-dot');
             if (!dots.length) return;
@@ -1658,7 +1718,7 @@
             startLarus2Timer();
         }
 
-        /* RocketAir / Terraformation Slideshow */
+        /* 04 Terraformation Slideshow */
         function initRocketAirSlideshow() {
             const dots = document.querySelectorAll('.rocketair-dot');
             if (!dots.length) return;
@@ -1710,7 +1770,7 @@
             startRocketAirTimer();
         }
 
-        /* MCIM (Rig) Slideshow */
+        /* 05 MCIM (Rig) Slideshow */
         function initRigSlideshow() {
             const dots = document.querySelectorAll('.rig-dot');
             if (!dots.length) return;
@@ -1762,7 +1822,7 @@
             startRigTimer();
         }
 
-        /* OatFi / SECLOCK Slideshow */
+        /* 03 SECLOCK Slideshow */
         function initOatfiSlideshow() {
             const dots = document.querySelectorAll('.oatfi-dot');
             if (!dots.length) return;
@@ -1814,7 +1874,7 @@
             startOatfiTimer();
         }
 
-        /* Olive / Terraformation Slideshow */
+        /* 01 OatFi Slideshow */
         function initOliveSlideshow() {
             const dots = document.querySelectorAll('.olive-dot');
             if (!dots.length) return;
@@ -1866,6 +1926,58 @@
             startOliveTimer();
         }
 
+        /* 06 RocketAir Project Slideshow */
+        function initRocketAirProjectSlideshow() {
+            const dots = document.querySelectorAll('.rocketair-proj-dot');
+            if (!dots.length) return;
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showRocketAirProjSlide(index);
+                    resetRocketAirProjTimer();
+                });
+            });
+
+            observeSlideshowVisibility('rocketair-project-slideshow-container', startRocketAirProjTimer, () => clearInterval(rocketairProjTimer));
+        }
+
+        function showRocketAirProjSlide(index) {
+            const slides = document.querySelectorAll('.rocketair-proj-slide');
+            const dots = document.querySelectorAll('.rocketair-proj-dot');
+            if (!slides.length) return;
+
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('opacity-100', idx === index);
+                slide.classList.toggle('opacity-0', idx !== index);
+            });
+
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('bg-white', idx === index);
+                dot.classList.toggle('bg-white/40', idx !== index);
+                dot.classList.toggle('w-3', idx === index);
+                dot.classList.toggle('w-1.5', idx !== index);
+            });
+
+            rocketairProjSlideIndex = index;
+        }
+
+        function startRocketAirProjTimer() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            clearInterval(rocketairProjTimer);
+            rocketairProjTimer = setInterval(() => {
+                const slides = document.querySelectorAll('.rocketair-proj-slide');
+                if (!slides.length) return;
+                const nextIndex = (rocketairProjSlideIndex + 1) % slides.length;
+                showRocketAirProjSlide(nextIndex);
+            }, 2000);
+        }
+
+        function resetRocketAirProjTimer() {
+            clearInterval(rocketairProjTimer);
+            startRocketAirProjTimer();
+        }
+
         function triggerBadgePop(el) {
             if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             el.classList.add('is-popped');
@@ -1875,8 +1987,8 @@
         }
 
         function initSmoothVideoLoop() {
-            const video = document.getElementById('cargosprintVideo');
-            const video2 = document.getElementById('larus2Video');
+            const video = document.getElementById('oatfiVideo');
+            const video2 = document.getElementById('larusTopVideo');
 
             function bindLoop(vid) {
                 if (!vid) return;
@@ -2119,11 +2231,9 @@
             const closeBtn = document.getElementById('lightboxClose');
             const mediaElements = document.querySelectorAll('.bento-card img, .bento-card video, .lab-img-wrap img');
 
-            // Attach click listeners to all project media and lab images
             mediaElements.forEach(el => {
                 el.classList.add('clickable-img');
                 el.addEventListener('click', function(e) {
-                    // Prevent hidden slides from opening
                     if (this.classList.contains('opacity-0')) return;
                     
                     e.stopPropagation();
@@ -2153,7 +2263,6 @@
                 });
             });
 
-            // Smooth loop handler for the lightbox video to prevent EOF flash
             if (lightboxVideo) {
                 let isLightboxResetting = false;
                 lightboxVideo.addEventListener('timeupdate', () => {
@@ -2168,7 +2277,6 @@
                 });
             }
 
-            // Close functionality
             function closeLightbox() {
                 lightbox.classList.remove('is-active');
                 document.body.classList.remove('lightbox-open');
@@ -2183,7 +2291,6 @@
                 }, 300);
             }
 
-            // Close on overlay click or close button click
             lightbox.addEventListener('click', (e) => {
                 if (e.target === lightboxVideo) return;
                 closeLightbox();
@@ -2193,7 +2300,6 @@
                 closeLightbox();
             });
 
-            // Close on Escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && lightbox.classList.contains('is-active')) {
                     closeLightbox();
@@ -2214,12 +2320,13 @@
             initMobileMenu();
             initEasyImageLoading();
             initLazyVideos();
-            initStryxSlideshow();
-            initLarus2Slideshow();
-            initRocketAirSlideshow();
-            initRigSlideshow();
-            initOatfiSlideshow();
-            initOliveSlideshow();
+            initOliveSlideshow();              /* 01 OatFi */
+            initLarus2Slideshow();             /* 02 Larus */
+            initOatfiSlideshow();              /* 03 SECLOCK */
+            initRocketAirSlideshow();          /* 04 Terraformation */
+            initRigSlideshow();                /* 05 MCIM */
+            initRocketAirProjectSlideshow();   /* 06 RocketAir */
+            initStryxSlideshow();              /* 07 TrailerTrader */
             initSmoothVideoLoop();
             initScrambleEffects();
             initFooterTextFit();
