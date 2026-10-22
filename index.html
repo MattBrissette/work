@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matt Brissette — Designer Portfolio</title>
+    <title>Matt Brissette — Senior Designer Portfolio</title>
     
     <link rel="preconnect" href="https://mbrissette.x02.me" crossorigin>
     <link rel="dns-prefetch" href="https://mbrissette.x02.me">
@@ -62,6 +62,12 @@
 
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Ensure sections with sticky header have proper scroll clearance */
+        section[id],
+        div[id="projects"] {
+            scroll-margin-top: 5rem;
         }
 
         /* Ambient Dynamic Header - GPU Composited */
@@ -267,19 +273,19 @@
         }
 
         /* Slideshow image optimization */
-        .stryx-slide, .rocketair-slide, .rig-slide, .oatfi-slide, .olive-slide, .larus2-slide, .rocketair-proj-slide {
+        .stryx-slide, .geo-slide, .rocketair-slide, .rig-slide, .oatfi-slide, .olive-slide, .larus2-slide, .rocketair-proj-slide, .flo-slide {
             will-change: opacity;
             transform: translateZ(0);
             backface-visibility: hidden;
         }
 
-        .stryx-slide.opacity-100, .rocketair-slide.opacity-100,
-        .rig-slide.opacity-100, .oatfi-slide.opacity-100, .olive-slide.opacity-100, .larus2-slide.opacity-100, .rocketair-proj-slide.opacity-100 {
+        .stryx-slide.opacity-100, .geo-slide.opacity-100, .rocketair-slide.opacity-100,
+        .rig-slide.opacity-100, .oatfi-slide.opacity-100, .olive-slide.opacity-100, .larus2-slide.opacity-100, .rocketair-proj-slide.opacity-100, .flo-slide.opacity-100 {
             opacity: 1 !important;
         }
 
-        .stryx-slide.opacity-0, .rocketair-slide.opacity-0,
-        .rig-slide.opacity-0, .oatfi-slide.opacity-0, .olive-slide.opacity-0, .larus2-slide.opacity-0, .rocketair-proj-slide.opacity-0 {
+        .stryx-slide.opacity-0, .geo-slide.opacity-0, .rocketair-slide.opacity-0,
+        .rig-slide.opacity-0, .oatfi-slide.opacity-0, .olive-slide.opacity-0, .larus2-slide.opacity-0, .rocketair-proj-slide.opacity-0, .flo-slide.opacity-0 {
             opacity: 0 !important;
             pointer-events: none;
         }
@@ -546,7 +552,7 @@
 
         <section id="top" class="space-y-10 sm:space-y-12 max-w-5xl pt-2 reveal-on-scroll" data-context="Visual Design &amp; Digital Products">
             <h1 class="text-[clamp(1.5rem,3.8vw,2.6rem)] leading-[1.18] sm:leading-[1.2] font-normal tracking-tight text-brand-900 dark:text-brand-100" data-reveal="masked-lines">
-                Hi, I’m <a href="https://www.linkedin.com/in/mattbrissette/" target="_blank" rel="noopener noreferrer" class="underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 dark:hover:decoration-brand-100 transition-colors font-medium">Matt Brissette</a><span class="avatar-badge-container shrink-0 cursor-pointer" onclick="triggerBadgePop(this)" title="Hi! 👋"><img src="https://mbrissette.x02.me/i/27NVNF.jpeg" alt="Matt Brissette" class="avatar-badge-img border border-brand-300 dark:border-brand-700 shadow-sm shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/40x40/18181b/ffffff?text=MB'" /><span class="avatar-wave-badge" aria-hidden="true">👋</span></span>, an Interactive &amp; Digital Experience Designer based in the Gatineau–Ottawa region. I turn complex ideas into clear, engaging experiences across web, e-commerce, and interactive.
+                Hi, I’m <a href="https://www.linkedin.com/in/mattbrissette/" target="_blank" rel="noopener noreferrer" class="underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 dark:hover:decoration-brand-100 transition-colors font-medium">Matt Brissette</a><span class="avatar-badge-container shrink-0 cursor-pointer" onclick="triggerBadgePop(this)" title="Hi! 👋"><img src="https://mbrissette.x02.me/i/27NVNF.jpeg" alt="Matt Brissette" class="avatar-badge-img border border-brand-300 dark:border-brand-700 shadow-sm shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/40x40/18181b/ffffff?text=MB'" /><span class="avatar-wave-badge" aria-hidden="true">👋</span></span>, a Senior Designer working across brand, print, and digital. I turn complex ideas into clear, engaging work that holds together on every touchpoint.
             </h1>
             
             <div class="pt-4 sm:pt-6 max-w-full overflow-hidden">
@@ -554,7 +560,6 @@
                     <div class="animate-marquee flex items-center space-x-6 text-sm sm:text-base font-medium text-brand-800 dark:text-brand-200 whitespace-nowrap">
                         <span>Barnes & Noble</span><span class="text-brand-400 font-mono text-xs">/</span>
                         <span>Canadian Space Agency</span><span class="text-brand-400 font-mono text-xs">/</span>
-                        <span>CargoSprint</span><span class="text-brand-400 font-mono text-xs">/</span>
                         <span>CaRMS</span><span class="text-brand-400 font-mono text-xs">/</span>
                         <span>Commvault</span><span class="text-brand-400 font-mono text-xs">/</span>
                         <span>FLO EV Charger</span><span class="text-brand-400 font-mono text-xs">/</span>
@@ -571,7 +576,6 @@
                         <!-- Duplicate Set for Continuous Loop -->
                         <span>Barnes & Noble</span><span class="text-brand-400 font-mono text-xs">/</span>
                         <span>Canadian Space Agency</span><span class="text-brand-400 font-mono text-xs">/</span>
-                        <span>CargoSprint</span><span class="text-brand-400 font-mono text-xs">/</span>
                         <span>CaRMS</span><span class="text-brand-400 font-mono text-xs">/</span>
                         <span>Commvault</span><span class="text-brand-400 font-mono text-xs">/</span>
                         <span>FLO EV Charger</span><span class="text-brand-400 font-mono text-xs">/</span>
@@ -592,19 +596,447 @@
         <!-- PROJECTS CONTAINER -->
         <div id="projects" class="space-y-16 sm:space-y-24">
 
-            <!-- PROJECT 1: OatFi -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,User Map,Information Architecture,Email Design,Design System,Illustration,Brand Evolution,Marketing Assets" data-context="01 / 07 OatFi">
+            <!-- PROJECT 1: Compremium -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="UX &amp; UI Design,Brand,Art Direction" data-context="01 / 08 Compremium">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>Compremium</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">01 / 08</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B, Medtech</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/eCKJHL.webp" loading="eager" fetchpriority="high" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=Compremium+1'" alt="Compremium 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/n22nJN.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Compremium+2'" alt="Compremium 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/6qwAnX.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Compremium+3'" alt="Compremium 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div id="rig-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/IDmpH8.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Compremium+4a'" alt="Compremium - Sequence 1" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/eJEdB4.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Compremium+4b'" alt="Compremium - Sequence 2" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/RnHIkI.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Compremium+4c'" alt="Compremium - Sequence 3" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/8KGLj1.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Compremium+4d'" alt="Compremium - Sequence 4" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/Sj6WR0.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Compremium+4e'" alt="Compremium - Sequence 5" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/a6Ijrh.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Compremium+4f'" alt="Compremium - Sequence 6" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="rig-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Compremium 5 -->
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/Qf9YwA.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Compremium+5'" alt="Compremium 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">UX &amp; UI Design</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Art Direction</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            Following FDA clearance for its CPMX-1 medical device, Compremium needed a website to introduce its flagship product while staying true to its existing brand identity.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            We designed a modern digital experience that puts the product front and center. Clean typography, a restrained color palette, and a refined layout create the sense of precision and quality expected from a high-end medical device, while a smooth scrolling experience guides visitors through the product's key features and benefits.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 2: Larus -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Interactive 3D,Web design &amp; UX,Design system,Art Direction" data-context="02 / 08 Larus">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>Larus</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">02 / 08</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B / B2G, Defence Tech</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#0c0c12] dark:bg-[#0c0c12] border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group aspect-[16/9] sm:aspect-[2/1] lg:aspect-[16/9]">
+                        <video id="larusTopVideo" data-src="https://mbrissette.x02.me/i/Q2ZLa5.mp4" loop muted playsinline webkit-playsinline preload="none" class="absolute inset-0 w-full h-full object-cover rounded-xl clickable-img block" aria-label="Larus Video Overview"></video>
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/TvzHat.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+2'" alt="Larus 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/Lm5JYn.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+3'" alt="Larus 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <!-- Card 4: Larus 6-Image Slideshow -->
+                    <div id="larus2-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/Qg6nBf.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4a'" alt="Larus - Sequence 1" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/XMPnQF.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4b'" alt="Larus - Sequence 2" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/mMJ5Ng.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4c'" alt="Larus - Sequence 3" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/MlHCLS.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4d'" alt="Larus - Sequence 4" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/QntUjS.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4e'" alt="Larus - Sequence 5" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="larus2-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/STtuA2.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+5'" alt="Larus 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Interactive 3D</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web design &amp; UX</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Design system</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Art Direction</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            Trade show conversations are short, and enterprise software is hard to explain in a few minutes. I designed and built an interactive 3D exhibition experience that launched alongside Larus's booth at CANSEC, Canada's largest defence and security trade show.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            It combines storytelling, product demos, downloadable resources and lead capture, was built with AI-assisted tools (Gemini and Claude), and can be re-skinned for future shows.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I also led UX, art direction and design for the Larus marketing site, along with marketing assets and campaigns, turning complex AI capabilities into a clear digital platform.
+                        </p>
+                        <div class="pt-1">
+                            <a href="https://mattbrissette.github.io/3d_booth/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm sm:text-base font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 dark:hover:decoration-brand-100 transition-colors group">
+                                <span class="font-medium group-hover:text-brand-900 dark:group-hover:text-white">mattbrissette.github.io/3d_booth</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 3: RocketAir -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Creative Strategy,Editorial Typography,Art Direction,Motion Concept,Brand Identity" data-context="03 / 08 RocketAir">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>RocketAir</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">03 / 08</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">Design &amp; Technology</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/1lCyoM.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=RocketAir+1'" alt="RocketAir 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/9TX0z7.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=RocketAir+2'" alt="RocketAir 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/l6km94.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=RocketAir+3'" alt="RocketAir 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div id="rocketair-project-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/PXOi49.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4a'" alt="RocketAir - Sequence 1" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/ceFgmX.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4b'" alt="RocketAir - Sequence 2" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/c5C1bB.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4c'" alt="RocketAir - Sequence 3" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/TL5b8R.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4d'" alt="RocketAir - Sequence 4" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="rocketair-proj-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-proj-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-proj-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-proj-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: RocketAir 5 -->
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/UZAS3G.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=RocketAir+5'" alt="RocketAir 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Creative Strategy</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Editorial Typography</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Art Direction</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Motion Concept</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Identity</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            A digital experience created in collaboration with RocketAir, blending creative strategy, thoughtful design, and high-impact visuals into a modern, engaging web experience.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            Visuals were inspired by editorial/brutalist, bold typography as the visual anchor. A lo-fi space theme is contrasted against a bright neon yellow accent, set against a high-contrast, near-monochrome black-and-white base.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            The whole experience was designed with motion in mind, with content sitting at the corners and edges rather than centered, leaving generous negative space to breathe.
+                        </p>
+                        <div class="pt-1">
+                            <a href="https://www.rocketair.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm sm:text-base font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 dark:hover:decoration-brand-100 transition-colors group">
+                                <span class="font-medium group-hover:text-brand-900 dark:group-hover:text-white">rocketair.com</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 lg:w-4/5">
+                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2">
+                            <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">Awwwards</h4>
+                            <p class="text-xs sm:text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                                Awarded Site of the Day and the Developer Award for balancing innovative design with quality code.
+                            </p>
+                        </div>
+                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2">
+                            <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">CSS Design Awards</h4>
+                            <p class="text-xs sm:text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                                Selected as Website of the Day alongside public-voted category sweeps for Best UI Design, Best UX Design, and Best Innovation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 4: FLO EV Charging -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Campaign assets,Web Design" data-context="04 / 08 FLO EV Charging">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>FLO EV Charging</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">04 / 08</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B/B2C, E-Mobility</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/jPfOSg.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1b2a1f/ffffff?text=FLO+EV+Charging+1'" alt="FLO EV Charging 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/hEnPL7.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=FLO+EV+Charging+2'" alt="FLO EV Charging 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/U6ZBog.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=FLO+EV+Charging+3'" alt="FLO EV Charging 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <!-- Card 4: FLO EV Charging 4-Image Slideshow -->
+                    <div id="flo-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/mItkFZ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=FLO+EV+Charging+4a'" alt="FLO EV Charging - Sequence 1" class="flo-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/umjqYj.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=FLO+EV+Charging+4b'" alt="FLO EV Charging - Sequence 2" class="flo-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/GoRHBK.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=FLO+EV+Charging+4c'" alt="FLO EV Charging - Sequence 3" class="flo-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/2erxFI.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=FLO+EV+Charging+4d'" alt="FLO EV Charging - Sequence 4" class="flo-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="flo-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="flo-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="flo-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="flo-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/MSxu4M.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/500x500/1b2a1f/ffffff?text=FLO+EV+Charging+5'" alt="FLO EV Charging 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Campaign assets</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            Terraformation works to solve the biggest bottlenecks in native forest restoration. To launch the Seed to Forest Alliance, it needed a digital presence that combined ecological credibility with modern, technology-forward design.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I led UX, information architecture and visual design for Terraformation's digital experience and the Seed to Forest Alliance platform, establishing a cinematic art direction. That included a research-driven story on why seed supply matters, an event page for NYC Climate Week, and a sign-up form for partners, landowners and carbon buyers.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I also designed marketing ads and campaign assets for the NYC Climate Week event, extending the cinematic visual language across digital and social touchpoints.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 5: Inaru -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Brand Identity,Packaging,Art Direction,Visual Design" data-context="05 / 08 Inaru">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>Inaru</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">05 / 08</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">Food &amp; Beverage</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/ZUT1wI.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=Inaru+1'" alt="Inaru 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/3QyPMr.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Inaru+2'" alt="Inaru 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/pejhFQ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Inaru+3'" alt="Inaru 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <!-- Card 4: Inaru 7-Image Slideshow -->
+                    <div id="stryx-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/CNhtuD.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Inaru+4a'" alt="Inaru - Sequence 1" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/Gxj0Ci.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Inaru+4b'" alt="Inaru - Sequence 2" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/qZlnMU.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Inaru+4c'" alt="Inaru - Sequence 3" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/JeoJqV.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Inaru+4d'" alt="Inaru - Sequence 4" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/edOyF4.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Inaru+4e'" alt="Inaru - Sequence 5" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/ibaCWp.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Inaru+4f'" alt="Inaru - Sequence 6" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/O0YTtE.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Inaru+4g'" alt="Inaru - Sequence 7" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
+                        
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="stryx-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/elxFCz.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/500x500/18181b/ffffff?text=Inaru+5'" alt="Inaru 5" class="w-full h-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Identity</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Packaging</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Art Direction</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Visual Design</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            Inaru is a premium cocoa brand from the Dominican Republic built around ethical production and a vertically integrated supply chain. The goal was to position nature as the ultimate luxury, creating a brand that appeals to consumers who value both quality and sustainability.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            We developed a refined visual identity with elegant typography, earthy colors inspired by the Dominican landscape, and art-directed photography. The immersive, story-driven website brings the brand to life through a premium digital experience.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 6: Terraformation -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Landing Page,Content Design,Marketing Assets" data-context="06 / 08 Terraformation">
+                <header class="flex items-baseline justify-between line-draw-b pb-3">
+                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
+                        <span>Terraformation</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">06 / 08</span>
+                    </h2>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B, Climate Tech</span>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/ScnxQQ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1b2a1f/ffffff?text=Terraformation+1'" alt="Terraformation 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/poAnUU.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Terraformation+2'" alt="Terraformation 2" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/bPdQg0.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Terraformation+3'" alt="Terraformation 3" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <!-- Card 4: Terraformation 4-Image Slideshow -->
+                    <div id="rocketair-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/Su6ACF.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=Terraformation+4a'" alt="Terraformation - Sequence 1" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/UN8MRo.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=Terraformation+4b'" alt="Terraformation - Sequence 2" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/9eFG3G.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4c'" alt="Terraformation - Sequence 3" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/te4pBL.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4d'" alt="Terraformation - Sequence 4" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+
+                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+                            <span class="rocketair-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="rocketair-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/umuPIm.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/500x500/1b2a1f/ffffff?text=Terraformation+5'" alt="Terraformation 5" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                </div>
+
+                <div class="space-y-5 pt-2">
+                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
+                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Landing Page</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Content Design</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Marketing Assets</span>
+                    </div>
+
+                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
+                        <p data-reveal="masked-lines">
+                            Terraformation works to solve the biggest bottlenecks in native forest restoration. To launch the Seed to Forest Alliance, it needed a digital presence that combined ecological credibility with modern, technology-forward design.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I led UX, information architecture and visual design for Terraformation's digital experience and the Seed to Forest Alliance platform, establishing a cinematic art direction. That included a research-driven story on why seed supply matters, an event page for NYC Climate Week, and a sign-up form for partners, landowners and carbon buyers.
+                        </p>
+                        <p data-reveal="masked-lines">
+                            I also designed marketing ads and campaign assets for the NYC Climate Week event, extending the cinematic visual language across digital and social touchpoints.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 7: OatFi -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,User Map,Information Architecture,Email Design,Design System,Illustration,Brand Evolution,Marketing Assets" data-context="07 / 08 OatFi">
                 <header class="flex items-baseline justify-between line-draw-b pb-3">
                     <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
                         <span>OatFi</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">01 / 07</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">07 / 08</span>
                     </h2>
                     <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B, Fintech</span>
                 </header>
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
                     <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/dFBmt6.webp" loading="eager" fetchpriority="high" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=OatFi+1'" alt="OatFi 1" class="w-full h-full object-cover rounded-xl" />
+                        <img src="https://mbrissette.x02.me/i/dFBmt6.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=OatFi+1'" alt="OatFi 1" class="w-full h-full object-cover rounded-xl" />
                     </div>
 
                     <div class="md:col-span-6 bg-[#1E2329] dark:bg-[#1E2329] border-0 rounded-xl bento-card is-img-ready relative overflow-hidden group flex items-center justify-center" style="background-color: #1E2329; border: none;">
@@ -676,458 +1108,96 @@
                 </div>
             </article>
 
-            <!-- PROJECT 2: MCIM -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Wireframes,PowerPoint Template &amp; Deck,Iconography,Art Direction,Brand Guidelines,Brand Evolution" data-context="02 / 07 MCIM">
+            <!-- PROJECT 8: GeoStories -->
+            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Strategy,Design lead,Art direction" data-context="08 / 08 GeoStories">
                 <header class="flex items-baseline justify-between line-draw-b pb-3">
                     <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
-                        <span>MCIM</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">02 / 07</span>
+                        <span>GeoStories</span>
+                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">08 / 08</span>
                     </h2>
-                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B SaaS</span>
+                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">Campaign, Social Media</span>
                 </header>
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
                     <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/kK67aq.jpeg" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=MCIM+1'" alt="MCIM 1" class="w-full h-full object-cover rounded-xl" />
+                        <img src="https://mbrissette.x02.me/i/ucbH8g.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1b2a1f/ffffff?text=GeoStories+1'" alt="GeoStories 1" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+
+                    <div class="md:col-span-6 aspect-[6/5] md:aspect-auto bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/6HXHV0.gif" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=GeoStories+2'" alt="GeoStories 2" class="absolute inset-0 w-full h-full object-cover object-center rounded-xl" />
                     </div>
 
                     <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/mB0mkY.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=MCIM+2'" alt="MCIM 2" class="w-full h-full object-cover rounded-xl" />
+                        <img src="https://mbrissette.x02.me/i/ceEjXi.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=GeoStories+3'" alt="GeoStories 3" class="w-full h-full object-cover rounded-xl" />
                     </div>
 
-                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/4Y5P7S.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=MCIM+3'" alt="MCIM 3" class="w-full h-full object-cover rounded-xl" />
-                    </div>
+                    <!-- Card 4: GeoStories 5-Image Slideshow -->
+                    <div id="geo-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
+                        <img src="https://mbrissette.x02.me/i/v0rf2T.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=GeoStories+4a'" alt="GeoStories - Sequence 1" class="geo-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-100" />
+                        <img src="https://mbrissette.x02.me/i/JId3GQ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=GeoStories+4b'" alt="GeoStories - Sequence 2" class="geo-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/gyUOrr.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=GeoStories+4c'" alt="GeoStories - Sequence 3" class="geo-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/jL6S5I.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=GeoStories+4d'" alt="GeoStories - Sequence 4" class="geo-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
+                        <img src="https://mbrissette.x02.me/i/cYoQEW.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=GeoStories+4e'" alt="GeoStories - Sequence 5" class="geo-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
 
-                    <div id="rig-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/pi2ZU4.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=MCIM+4a'" alt="MCIM - Sequence 1" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
-                        <img src="https://mbrissette.x02.me/i/fsMcTD.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=MCIM+4b'" alt="MCIM - Sequence 2" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/mUMQjB.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=MCIM+4c'" alt="MCIM - Sequence 3" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/X4ydje.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=MCIM+4d'" alt="MCIM - Sequence 4" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/5yTDEj.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=MCIM+4e'" alt="MCIM - Sequence 5" class="rig-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        
                         <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
-                            <span class="rig-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
-                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="rig-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="geo-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
+                            <span class="geo-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="geo-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="geo-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
+                            <span class="geo-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
                         </div>
                     </div>
 
-                    <!-- Card 5: MCIM 5 -->
                     <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/7X2hlV.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=MCIM+5'" alt="MCIM 5" class="w-full h-full object-cover rounded-xl" />
+                        <img src="https://mbrissette.x02.me/i/UL6FWa.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/500x500/1b2a1f/ffffff?text=GeoStories+5'" alt="GeoStories 5" class="w-full h-full object-cover rounded-xl" />
                     </div>
                 </div>
 
                 <div class="space-y-5 pt-2">
                     <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
                         <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Wireframes</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">PowerPoint Template &amp; Deck</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Iconography</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Art Direction</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Guidelines</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Evolution</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Strategy</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Design lead</span>
+                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Art direction</span>
                     </div>
 
                     <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
                         <p data-reveal="masked-lines">
-                            Fulcrum Collaborations’ flagship SaaS product, MCIM, was growing fast and needed a website that clearly explains what it does and who it serves.
+                            Young Canadians are passionate about experiential travel and sharing memorable moments on Instagram. We identified Canada's most frequently geotagged locations, researched hundreds of location-specific stories, and created a system for the team to manually reply with relevant historical facts whenever users tagged one of those destinations.
                         </p>
                         <p data-reveal="masked-lines">
-                            I led UX and wireframing before designing the final site, then built the supporting system: a PowerPoint template and deck, custom iconography, brand guidelines and art direction that modernized the identity without losing its recognition.
+                            We also created Instagram accounts for key figures from the Geological Survey’s long history, allowing users to explore the stories behind the facts they received. Each geologist’s profile linked to an updated Wikipedia page, giving users an easy way to learn more and continue their discovery.
                         </p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 lg:w-4/5">
-                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2.5 md:col-span-2">
+                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2.5">
+                            <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">Award</h4>
+                            <p class="text-xs sm:text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
+                                Gold, Effective Social Strategy
+                            </p>
+                            <span class="block text-xs font-mono text-brand-500 dark:text-brand-400 not-italic pt-1 scramble-mono">— WARC Awards</span>
+                        </div>
+                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2.5">
                             <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">Result</h4>
                             <p class="text-xs sm:text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
-                                “The unified platform supports growth across 90+ countries. The CMO reported an ‘immediate improvement in leads and market reaction.’”
+                                6.3M impressions / 95% positive sentiment on Instagram
                             </p>
-                            <span class="block text-xs font-mono text-brand-500 dark:text-brand-400 not-italic pt-1 scramble-mono">— CMO, MCIM</span>
                         </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PROJECT 3: RocketAir -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Creative Strategy,Editorial Typography,Art Direction,Motion Concept,Brand Identity" data-context="03 / 07 RocketAir">
-                <header class="flex items-baseline justify-between line-draw-b pb-3">
-                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
-                        <span>RocketAir</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">03 / 07</span>
-                    </h2>
-                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">Design &amp; Technology</span>
-                </header>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/1lCyoM.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=RocketAir+1'" alt="RocketAir 1" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/9TX0z7.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=RocketAir+2'" alt="RocketAir 2" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/l6km94.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=RocketAir+3'" alt="RocketAir 3" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div id="rocketair-project-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/PXOi49.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4a'" alt="RocketAir - Sequence 1" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
-                        <img src="https://mbrissette.x02.me/i/ceFgmX.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4b'" alt="RocketAir - Sequence 2" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/c5C1bB.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4c'" alt="RocketAir - Sequence 3" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/TL5b8R.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=RocketAir+4d'" alt="RocketAir - Sequence 4" class="rocketair-proj-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        
-                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
-                            <span class="rocketair-proj-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
-                            <span class="rocketair-proj-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="rocketair-proj-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="rocketair-proj-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                        </div>
-                    </div>
-
-                    <!-- Card 5: RocketAir 5 -->
-                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/UZAS3G.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=RocketAir+5'" alt="RocketAir 5" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-                </div>
-
-                <div class="space-y-5 pt-2">
-                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
-                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Creative Strategy</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Editorial Typography</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Art Direction</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Motion Concept</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Identity</span>
-                    </div>
-
-                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
-                        <p data-reveal="masked-lines">
-                            A digital experience created in collaboration with RocketAir, blending creative strategy, thoughtful design, and high-impact visuals into a modern, engaging web experience.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            Visuals were inspired by editorial/brutalist design, using bold typography as the visual anchor. A lo-fi space theme is contrasted against a bright neon yellow accent, set against a high-contrast, near-monochrome black-and-white base.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            The whole experience was designed with motion in mind, with content sitting at the corners and edges rather than centered, leaving generous negative space to breathe.
-                        </p>
-                        <div class="pt-1">
-                            <a href="https://www.rocketair.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm sm:text-base font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 dark:hover:decoration-brand-100 transition-colors group">
-                                <span class="font-medium group-hover:text-brand-900 dark:group-hover:text-white">rocketair.com</span>
-                                <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 lg:w-4/5">
-                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2">
-                            <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">Awwwards</h4>
+                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2.5">
+                            <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">Press</h4>
                             <p class="text-xs sm:text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
-                                Awarded Site of the Day and the Developer Award for balancing innovative design with quality code.
+                                “Quirky Instagram history project could hold a lesson for digital marketers”
                             </p>
+                            <span class="block text-xs font-mono text-brand-500 dark:text-brand-400 not-italic pt-1 scramble-mono">— The Globe and Mail</span>
                         </div>
-                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2">
-                            <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">CSS Design Awards</h4>
+                        <div class="callout-card p-5 sm:p-6 rounded-[4px] border border-brand-200/80 dark:border-brand-800 bg-white/60 dark:bg-brand-900/60 backdrop-blur-sm space-y-2.5">
+                            <h4 class="font-mono font-bold text-sm tracking-tight text-brand-900 dark:text-brand-100">Press</h4>
                             <p class="text-xs sm:text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
-                                Selected as Website of the Day alongside public-voted category sweeps for Best UI Design, Best UX Design, and Best Innovation.
+                                “Boring product + no budget = effective social campaign”
                             </p>
+                            <span class="block text-xs font-mono text-brand-500 dark:text-brand-400 not-italic pt-1 scramble-mono">— WARC</span>
                         </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PROJECT 4: Larus -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Interactive 3D,Web Design &amp; UX,AI-Assisted Build,Lead Capture,Design System,Art Direction,Brand Guidelines,Brand Evolution" data-context="04 / 07 Larus">
-                <header class="flex items-baseline justify-between line-draw-b pb-3">
-                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
-                        <span>Larus</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">04 / 07</span>
-                    </h2>
-                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B / B2G, Defence Tech</span>
-                </header>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    <div class="md:col-span-12 bg-[#0c0c12] dark:bg-[#0c0c12] border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group aspect-[16/9] sm:aspect-[2/1] lg:aspect-[16/9]">
-                        <video id="larusTopVideo" data-src="https://mbrissette.x02.me/i/Q2ZLa5.mp4" loop muted playsinline webkit-playsinline preload="none" class="absolute inset-0 w-full h-full object-cover rounded-xl clickable-img block" aria-label="Larus Video Overview"></video>
-                    </div>
-
-                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/wA0aif.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+2'" alt="Larus 2" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/lYCoN6.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+3'" alt="Larus 3" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <!-- Card 4: Larus 6-Image Slideshow -->
-                    <div id="larus2-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/VTDx6F.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4a'" alt="Larus - Sequence 1" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
-                        <img src="https://mbrissette.x02.me/i/azx5TB.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4b'" alt="Larus - Sequence 2" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/8SZ8Sf.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4c'" alt="Larus - Sequence 3" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/obha6G.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4d'" alt="Larus - Sequence 4" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/I5i2P7.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4e'" alt="Larus - Sequence 5" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/G56mVJ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Larus+4f'" alt="Larus - Sequence 6" class="larus2-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        
-                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
-                            <span class="larus2-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
-                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="larus2-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/STtuA2.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=Larus+5'" alt="Larus 5" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-                </div>
-
-                <div class="space-y-5 pt-2">
-                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
-                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Interactive 3D</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">AI-Assisted Build</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Lead Capture</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Design System</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Art Direction</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Guidelines</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Evolution</span>
-                    </div>
-
-                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
-                        <p data-reveal="masked-lines">
-                            Trade show conversations are short, and enterprise software is hard to explain in a few minutes. I designed and built an interactive 3D exhibition experience that launched alongside Larus's booth at CANSEC, Canada's largest defence and security trade show.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            It combines storytelling, product demos, downloadable resources and lead capture, was built with AI-assisted tools (Gemini and Claude), and can be re-skinned for future shows.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            I also led UX, art direction and design for the Larus marketing site, along with marketing assets and campaigns, turning complex AI capabilities into a clear digital platform.
-                        </p>
-                        <div class="pt-1">
-                            <a href="https://mattbrissette.github.io/3d_booth/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm sm:text-base font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 dark:hover:decoration-brand-100 transition-colors group">
-                                <span class="font-medium group-hover:text-brand-900 dark:group-hover:text-white">mattbrissette.github.io/3d_booth</span>
-                                <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PROJECT 5: SECLOCK -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,E-Commerce,Information Architecture,Email Design,Marketing Website,Design System,Brand Evolution" data-context="05 / 07 SECLOCK">
-                <header class="flex items-baseline justify-between line-draw-b pb-3">
-                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
-                        <span>SECLOCK</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">05 / 07</span>
-                    </h2>
-                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B, Industrial Supplies</span>
-                </header>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    <!-- Big Full-Width Image (Image 01) at the TOP -->
-                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/7XSBX3.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=SECLOCK+1'" alt="SECLOCK 1" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/cQ7Bjq.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=SECLOCK+2'" alt="SECLOCK 2" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/yNUmW0.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=SECLOCK+3'" alt="SECLOCK 3" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <!-- Card 4: SECLOCK 5-Image Slideshow -->
-                    <div id="oatfi-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/7342F.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=SECLOCK+Sequence+1'" alt="SECLOCK - Sequence 1" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
-                        <img src="https://mbrissette.x02.me/i/AVGM8.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=SECLOCK+Sequence+2'" alt="SECLOCK - Sequence 2" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/GKZNFQ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=SECLOCK+Sequence+3'" alt="SECLOCK - Sequence 3" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/dDCTiM.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=SECLOCK+Sequence+4'" alt="SECLOCK - Sequence 4" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/25kMu1.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=SECLOCK+Sequence+5'" alt="SECLOCK - Sequence 5" class="oatfi-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        
-                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
-                            <span class="oatfi-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
-                            <span class="oatfi-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="oatfi-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="oatfi-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="oatfi-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                        </div>
-                    </div>
-
-                    <!-- Card 5: SECLOCK Banners / Collateral -->
-                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/AGN5.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=SECLOCK+Footer+and+Identity'" alt="SECLOCK Digital Platform and Identity" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-                </div>
-
-                <div class="space-y-5 pt-2">
-                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
-                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">E-Commerce</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Information Architecture</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Email Design</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Marketing Website</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Design System</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Brand Evolution</span>
-                    </div>
-
-                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
-                        <p data-reveal="masked-lines">
-                            SECLOCK sells a complex B2B product catalog that needed to be easier to navigate and understand.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            I redesigned the e-commerce experience around real B2B user needs: new information architecture, restructured product-detail pages, predictive search, filtering and contextual tutorials.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            I also redesigned the marketing website and emails around the customer journey and refreshed the brand, with a flexible digital system and typography inspired by West Berlin street signage.
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PROJECT 6: Terraformation -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Web Design &amp; UX,Landing Page,Content Design,Marketing Assets" data-context="06 / 07 Terraformation">
-                <header class="flex items-baseline justify-between line-draw-b pb-3">
-                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
-                        <span>Terraformation</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">06 / 07</span>
-                    </h2>
-                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B, Climate Tech</span>
-                </header>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/ScnxQQ.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1b2a1f/ffffff?text=Terraformation+1'" alt="Terraformation 1" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/poAnUU.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/1b2a1f/ffffff?text=Terraformation+2'" alt="Terraformation 2" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/bPdQg0.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/1b2a1f/ffffff?text=Terraformation+3'" alt="Terraformation 3" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <!-- Card 4: Terraformation 4-Image Slideshow -->
-                    <div id="rocketair-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/Su6ACF.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=Terraformation+4a'" alt="Terraformation - Sequence 1" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-100" />
-                        <img src="https://mbrissette.x02.me/i/UN8MRo.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=Terraformation+4b'" alt="Terraformation - Sequence 2" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/9eFG3G.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1b2a1f/ffffff?text=Terraformation+4c'" alt="Terraformation - Sequence 3" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/te4pBL.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=Terraformation+4d'" alt="Terraformation - Sequence 4" class="rocketair-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 opacity-0" />
-
-                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
-                            <span class="rocketair-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
-                            <span class="rocketair-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="rocketair-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="rocketair-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/umuPIm.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/500x500/1b2a1f/ffffff?text=Terraformation+5'" alt="Terraformation 5" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-                </div>
-
-                <div class="space-y-5 pt-2">
-                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
-                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Landing Page</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Content Design</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Marketing Assets</span>
-                    </div>
-
-                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
-                        <p data-reveal="masked-lines">
-                            Terraformation works to solve the biggest bottlenecks in native forest restoration. To launch the Seed to Forest Alliance, it needed a digital presence that combined ecological credibility with modern, technology-forward design.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            I led UX, information architecture and visual design for Terraformation's digital experience and the Seed to Forest Alliance platform, establishing a cinematic art direction. That included a research-driven story on why seed supply matters, an event page for NYC Climate Week, and a sign-up form for partners, landowners and carbon buyers.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            I also designed marketing ads and campaign assets for the NYC Climate Week event, extending the cinematic visual language across digital and social touchpoints.
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PROJECT 7: TrailerTrader -->
-            <article class="project-item space-y-6 pt-10 line-draw-t transition-all duration-300 reveal-on-scroll" data-tags="Dashboard Design,Web Design &amp; UX,E-Commerce,Mobile-First,Design System,Lead Generation" data-context="07 / 07 TrailerTrader">
-                <header class="flex items-baseline justify-between line-draw-b pb-3">
-                    <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-900 dark:text-brand-100 flex items-baseline gap-2.5" data-reveal="masked-lines">
-                        <span>TrailerTrader</span>
-                        <span class="text-xs sm:text-sm font-mono text-brand-400 dark:text-brand-500 font-normal scramble-mono">07 / 07</span>
-                    </h2>
-                    <span class="text-sm font-mono text-brand-500 dark:text-brand-400 scramble-mono">B2B/B2C Marketplace</span>
-                </header>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    <div class="md:col-span-12 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/LlBc6w.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/ffffff?text=TrailerTrader+1'" alt="TrailerTrader 1" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/JTs4EC.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=TrailerTrader+2'" alt="TrailerTrader 2" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <div class="md:col-span-6 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/ZdU2l7.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x500/18181b/ffffff?text=TrailerTrader+3'" alt="TrailerTrader 3" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-
-                    <!-- Card 4: TrailerTrader 5-Image Slideshow -->
-                    <div id="stryx-slideshow-container" class="md:col-span-7 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/oOfraK.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4a'" alt="TrailerTrader - Sequence 1" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-100" />
-                        <img src="https://mbrissette.x02.me/i/D6mZmo.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4b'" alt="TrailerTrader - Sequence 2" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/E8XMAy.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4c'" alt="TrailerTrader - Sequence 3" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/OJL7la.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4d'" alt="TrailerTrader - Sequence 4" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        <img src="https://mbrissette.x02.me/i/Duj81g.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/800x500/18181b/ffffff?text=TrailerTrader+4e'" alt="TrailerTrader - Sequence 5" class="stryx-slide absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-500 opacity-0" />
-                        
-                        <div class="absolute bottom-3 right-3 flex items-center space-x-1.5 z-10 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
-                            <span class="stryx-dot w-3 h-1.5 rounded-full bg-white transition-all duration-300 cursor-pointer"></span>
-                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                            <span class="stryx-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer"></span>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-5 bg-[#FDFDFD] dark:bg-brand-900 border border-brand-200/80 dark:border-brand-800 rounded-xl bento-card relative overflow-hidden group">
-                        <img src="https://mbrissette.x02.me/i/uCEql1.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/500x500/18181b/ffffff?text=TrailerTrader+5'" alt="TrailerTrader 5" class="w-full h-full object-cover rounded-xl" />
-                    </div>
-                </div>
-
-                <div class="space-y-5 pt-2">
-                    <div class="project-tags flex flex-wrap items-center gap-2 text-xs font-mono text-brand-600 dark:text-brand-400">
-                        <span class="text-brand-500 dark:text-brand-400 text-xs font-mono mr-0.5">Contribution:</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Dashboard Design</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Web Design &amp; UX</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">E-Commerce</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Mobile-First</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Design System</span>
-                        <span class="tag-pill px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 scramble-mono">Lead Generation</span>
-                    </div>
-
-                    <div class="space-y-4 text-base sm:text-lg text-brand-800 dark:text-brand-200 leading-relaxed font-normal lg:w-4/5">
-                        <p data-reveal="masked-lines">
-                            As TrailerTrader became the leading marketplace in its category, its existing product needed to evolve to support increased traffic, modern buyer expectations, and a more sophisticated dealer ecosystem.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            A major hurdle for many buyers was knowing they needed a trailer but feeling overwhelmed by technical specs and unsure of which category suited their needs. To solve this, we introduced a guided recommendation tool that lets shoppers answer a few quick questions about their haul, towing capacity, and usage, instantly pointing them to the ideal trailer type.
-                        </p>
-                        <p data-reveal="masked-lines">
-                            I created a comprehensive design system, designed a new dashboard for dealers, and delivered a faster, mobile-first experience with simpler navigation and stronger lead generation for dealers. This created more direct connections between buyers and dealers while providing a scalable foundation for future feature releases.
-                        </p>
                     </div>
                 </div>
             </article>
@@ -1139,37 +1209,7 @@
             <h2 class="text-lg font-semibold tracking-tight text-brand-900 dark:text-brand-100" data-reveal="masked-lines">Lab</h2>
 
             <div class="divide-y divide-brand-300/80 dark:divide-brand-800">
-                <!-- LAB PROJECT 1: Kinetic Columns -->
-                <div class="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 group reveal-on-scroll">
-                    <div class="w-full sm:w-48 aspect-[3/2] shrink-0 border border-brand-200/80 dark:border-brand-800 rounded-xl overflow-hidden bg-brand-100 dark:bg-brand-900 relative lab-img-wrap">
-                        <img src="https://mbrissette.x02.me/i/3U4H.webp" alt="Kinetic Columns 3D Exploration" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/18181b/ffffff?text=Kinetic+Columns'" />
-                    </div>
-                    <div class="flex-1 space-y-2">
-                        <p class="text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
-                            3D exploration built with Three.js and WebGL. Using procedural animation, audio-reactive motion, and interactive controls, it transforms a simple grid of columns into a dynamic digital playground. Built with Cursor.
-                        </p>
-                        <a href="https://mattbrissette.github.io/Kinetic_Columns/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 transition-colors font-medium">
-                            mattbrissette.github.io/Kinetic_Columns <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-60"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- LAB PROJECT 2: Glass Cube -->
-                <div class="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 group reveal-on-scroll">
-                    <div class="w-full sm:w-48 aspect-[3/2] shrink-0 border border-brand-200/80 dark:border-brand-800 rounded-xl overflow-hidden bg-brand-100 dark:bg-brand-900 relative lab-img-wrap">
-                        <img src="https://mbrissette.x02.me/i/8GXTD.webp" alt="Glass Cube 3D Experience" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/18181b/ffffff?text=Glass+Cube'" />
-                    </div>
-                    <div class="flex-1 space-y-2">
-                        <p class="text-sm text-brand-600 dark:text-brand-400 leading-relaxed font-normal" data-reveal="masked-lines">
-                            Built with Three.js, CSS3DRRenderer, and custom WebGL shaders, this interactive portfolio transforms traditional profile content into a navigable 3D glass cube experience. The project combines real-time rendering, procedural environments, post-processing effects, dynamic lighting, and CSS-driven interfaces.
-                        </p>
-                        <a href="https://mattbrissette.github.io/glass-cube/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-brand-900 dark:text-brand-100 underline decoration-brand-300 dark:decoration-brand-700 underline-offset-4 hover:decoration-brand-900 transition-colors font-medium">
-                            mattbrissette.github.io/glass-cube <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-60"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- LAB PROJECT 3: Loam — Spatial Search Engine -->
+                <!-- LAB PROJECT: Loam — Spatial Search Engine -->
                 <div class="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-start gap-5 sm:gap-6 group reveal-on-scroll">
                     <div class="w-full sm:w-48 aspect-[3/2] shrink-0 border border-brand-200/80 dark:border-brand-800 rounded-xl overflow-hidden bg-brand-100 dark:bg-brand-900 relative lab-img-wrap">
                         <img src="https://mbrissette.x02.me/i/O1mFjc.webp" alt="Loam — Spatial Search Engine" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/18181b/ffffff?text=Loam'" />
@@ -1198,14 +1238,18 @@
             
             <div class="mt-6 space-y-4 max-w-3xl text-base sm:text-lg text-brand-700 dark:text-brand-300 leading-relaxed font-normal">
                 <p data-reveal="masked-lines">
-                    I'm an Interactive and Digital Experience Designer with 10 years of experience, based in the Gatineau–Ottawa region. I design websites, e-commerce, branding, marketing campaigns, and interactive experiences for B2B technology companies—connecting brand and demand to turn complex products into clear, engaging stories.
+                    I'm a Senior Designer with 10 years of experience across brand, print, and digital. I design brand identities, websites, e-commerce, marketing campaigns, social media assets, print collateral, and interactive experiences for B2B technology companies—connecting brand and demand to turn complex products into clear, engaging stories.
                 </p>
                 <p data-reveal="masked-lines">
-                    I work from UX, information architecture, and wireframes through to polished visual systems and campaign rollouts, within an established brand or helping evolve it from the ground up. I'm comfortable presenting concepts, working closely with developers, and taking projects from idea to ready-to-build.
+                    I work from UX, information architecture, and wireframes through to polished visual systems, campaign rollouts, and print-ready assets, within an established brand or helping evolve it from the ground up. I'm comfortable presenting concepts, working closely with developers, and taking projects from idea to ready-to-build or ready-to-print.
                 </p>
                 <p data-reveal="masked-lines">
                     I use GenAI and 3D/WebGL to explore ideas faster and go beyond standard templates. My work has been recognized by Awwwards and CSS Design Awards. I work in English and French.
                 </p>
+                <div class="pt-2 flex items-center gap-1.5 text-xs sm:text-sm font-mono text-brand-500 dark:text-brand-400">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-400 dark:text-brand-500 shrink-0"></i>
+                    <span class="scramble-mono">Gatineau-Ottawa region</span>
+                </div>
             </div>
         </section>
 
@@ -1288,6 +1332,9 @@
         let stryxSlideIndex = 0;
         let stryxTimer = null;
 
+        let geoSlideIndex = 0;
+        let geoTimer = null;
+
         let larus2SlideIndex = 0;
         let larus2Timer = null;
 
@@ -1306,6 +1353,9 @@
         let rocketairProjSlideIndex = 0;
         let rocketairProjTimer = null;
 
+        let floSlideIndex = 0;
+        let floTimer = null;
+
         /* Smooth Anchor Scroll Navigation */
         function initNativeScroll() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1315,12 +1365,14 @@
                     const targetEl = document.querySelector(href);
                     if (targetEl) {
                         e.preventDefault();
-                        const headerOffset = href === '#top' ? 0 : 24;
+                        const header = document.getElementById('mainHeader');
+                        const headerHeight = header ? header.offsetHeight : 0;
+                        const headerOffset = href === '#top' ? 0 : (headerHeight + 24);
                         const elementPosition = targetEl.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
                         window.scrollTo({
-                            top: offsetPosition,
+                            top: Math.max(0, offsetPosition),
                             behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
                         });
                     }
@@ -1614,7 +1666,7 @@
             observer.observe(container);
         }
 
-        /* 07 TrailerTrader (Stryx) Slideshow */
+        /* 07 Inaru (Stryx) Slideshow */
         function initStryxSlideshow() {
             const dots = document.querySelectorAll('.stryx-dot');
             if (!dots.length) return;
@@ -1666,7 +1718,7 @@
             startStryxTimer();
         }
 
-        /* 02 Larus Slideshow */
+        /* 04 Larus Slideshow */
         function initLarus2Slideshow() {
             const dots = document.querySelectorAll('.larus2-dot');
             if (!dots.length) return;
@@ -1718,7 +1770,7 @@
             startLarus2Timer();
         }
 
-        /* 04 Terraformation Slideshow */
+        /* 06 Terraformation Slideshow */
         function initRocketAirSlideshow() {
             const dots = document.querySelectorAll('.rocketair-dot');
             if (!dots.length) return;
@@ -1770,7 +1822,111 @@
             startRocketAirTimer();
         }
 
-        /* 05 MCIM (Rig) Slideshow */
+        /* 09 GeoStories Slideshow */
+        function initGeoSlideshow() {
+            const dots = document.querySelectorAll('.geo-dot');
+            if (!dots.length) return;
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showGeoSlide(index);
+                    resetGeoTimer();
+                });
+            });
+
+            observeSlideshowVisibility('geo-slideshow-container', startGeoTimer, () => clearInterval(geoTimer));
+        }
+
+        function showGeoSlide(index) {
+            const slides = document.querySelectorAll('.geo-slide');
+            const dots = document.querySelectorAll('.geo-dot');
+            if (!slides.length) return;
+
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('opacity-100', idx === index);
+                slide.classList.toggle('opacity-0', idx !== index);
+            });
+
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('bg-white', idx === index);
+                dot.classList.toggle('bg-white/40', idx !== index);
+                dot.classList.toggle('w-3', idx === index);
+                dot.classList.toggle('w-1.5', idx !== index);
+            });
+
+            geoSlideIndex = index;
+        }
+
+        function startGeoTimer() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            clearInterval(geoTimer);
+            geoTimer = setInterval(() => {
+                const slides = document.querySelectorAll('.geo-slide');
+                if (!slides.length) return;
+                const nextIndex = (geoSlideIndex + 1) % slides.length;
+                showGeoSlide(nextIndex);
+            }, 2000);
+        }
+
+        function resetGeoTimer() {
+            clearInterval(geoTimer);
+            startGeoTimer();
+        }
+
+        /* 07 FLO EV Charging Slideshow */
+        function initFloSlideshow() {
+            const dots = document.querySelectorAll('.flo-dot');
+            if (!dots.length) return;
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showFloSlide(index);
+                    resetFloTimer();
+                });
+            });
+
+            observeSlideshowVisibility('flo-slideshow-container', startFloTimer, () => clearInterval(floTimer));
+        }
+
+        function showFloSlide(index) {
+            const slides = document.querySelectorAll('.flo-slide');
+            const dots = document.querySelectorAll('.flo-dot');
+            if (!slides.length) return;
+
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('opacity-100', idx === index);
+                slide.classList.toggle('opacity-0', idx !== index);
+            });
+
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('bg-white', idx === index);
+                dot.classList.toggle('bg-white/40', idx !== index);
+                dot.classList.toggle('w-3', idx === index);
+                dot.classList.toggle('w-1.5', idx !== index);
+            });
+
+            floSlideIndex = index;
+        }
+
+        function startFloTimer() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            clearInterval(floTimer);
+            floTimer = setInterval(() => {
+                const slides = document.querySelectorAll('.flo-slide');
+                if (!slides.length) return;
+                const nextIndex = (floSlideIndex + 1) % slides.length;
+                showFloSlide(nextIndex);
+            }, 2000);
+        }
+
+        function resetFloTimer() {
+            clearInterval(floTimer);
+            startFloTimer();
+        }
+
+        /* 02 Compremium (Rig) Slideshow */
         function initRigSlideshow() {
             const dots = document.querySelectorAll('.rig-dot');
             if (!dots.length) return;
@@ -1822,7 +1978,7 @@
             startRigTimer();
         }
 
-        /* 03 SECLOCK Slideshow */
+        /* 05 SECLOCK Slideshow */
         function initOatfiSlideshow() {
             const dots = document.querySelectorAll('.oatfi-dot');
             if (!dots.length) return;
@@ -1926,7 +2082,7 @@
             startOliveTimer();
         }
 
-        /* 06 RocketAir Project Slideshow */
+        /* 03 RocketAir Project Slideshow */
         function initRocketAirProjectSlideshow() {
             const dots = document.querySelectorAll('.rocketair-proj-dot');
             if (!dots.length) return;
@@ -2320,13 +2476,14 @@
             initMobileMenu();
             initEasyImageLoading();
             initLazyVideos();
-            initOliveSlideshow();              /* 01 OatFi */
-            initLarus2Slideshow();             /* 02 Larus */
-            initOatfiSlideshow();              /* 03 SECLOCK */
-            initRocketAirSlideshow();          /* 04 Terraformation */
-            initRigSlideshow();                /* 05 MCIM */
-            initRocketAirProjectSlideshow();   /* 06 RocketAir */
-            initStryxSlideshow();              /* 07 TrailerTrader */
+            initRigSlideshow();                /* 01 Compremium */
+            initRocketAirProjectSlideshow();   /* 02 RocketAir */
+            initStryxSlideshow();              /* 03 Inaru */
+            initOliveSlideshow();              /* 04 OatFi */
+            initLarus2Slideshow();             /* 05 Larus */
+            initRocketAirSlideshow();          /* 06 Terraformation */
+            initFloSlideshow();                /* FLO EV Charging */
+            initGeoSlideshow();                /* GeoStories */
             initSmoothVideoLoop();
             initScrambleEffects();
             initFooterTextFit();
