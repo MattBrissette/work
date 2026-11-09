@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matt Brissette — Portfolio</title>
+  <title>Matt Brissette — Visual &amp; Digital Experience Designer</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -370,7 +370,7 @@
     </button>
     <div id="lightbox-wrapper" class="w-full h-full flex items-center justify-center overflow-hidden px-14 py-20 md:px-20 md:py-24">
       <img id="lightbox-img" src="" alt="Portfolio specification sheet" class="max-w-full max-h-full object-contain cursor-zoom-in transition-transform duration-300 ease-out select-none" draggable="false">
-      <iframe id="lightbox-embed" title="Oatfi API-powered credit stack animation" sandbox="allow-scripts" scrolling="no" class="hidden border-0 max-w-full max-h-full h-full" style="aspect-ratio:2300 / 1596"></iframe>
+      <iframe id="lightbox-embed" title="Interactive visual prototype" sandbox="allow-scripts allow-same-origin" scrolling="no" class="hidden border-0 max-w-full max-h-full h-full" style="aspect-ratio:2300 / 1596"></iframe>
       <video id="lightbox-video" src="" autoplay loop muted playsinline class="max-w-full max-h-full object-contain cursor-zoom-in transition-transform duration-300 ease-out select-none hidden"></video>
     </div>
     <div id="lightbox-thumbnails" class="absolute bottom-3 md:bottom-6 flex gap-2 md:gap-3 z-[110] px-3 py-1.5 md:px-4 md:py-2 bg-zinc-950/90 border border-zinc-800 rounded-none backdrop-blur-sm max-w-[92vw] overflow-x-auto custom-scroll"></div>
@@ -683,10 +683,10 @@
           "https://mbrissette.x02.me/i/KGUA3P.mp4",
           "https://mbrissette.x02.me/i/fT95q1.webp",
           "embed:loam-how-it-works",
-          "https://mbrissette.x02.me/i/lLSE7i.webp",
+          "https://mbrissette.x02.me/i/phYgh2.webp",
           "https://mbrissette.x02.me/i/OJpzOW.webp",
           "https://mbrissette.x02.me/i/vzQQij.webp",
-          "https://mbrissette.x02.me/i/phYgh2.webp",
+          "https://mbrissette.x02.me/i/lLSE7i.webp",
           "https://mbrissette.x02.me/i/pLGw9U.webp",
           "https://mbrissette.x02.me/i/yaDCi7.mp4"
         ],
@@ -743,9 +743,9 @@
         tech: ["Product Design", "Design Systems", "UX/UI", "Web3 Architecture"],
         date: "2024",
         images: [
-          "https://mbrissette.x02.me/i/uR784w.webp",
+          "https://mbrissette.x02.me/i/Ssay75.mp4",
           "https://mbrissette.x02.me/i/yfj0jc.webp",
-          "https://mbrissette.x02.me/i/wa5wbb.mp4",
+          "https://mbrissette.x02.me/i/0ByrVa.mp4",
           "https://mbrissette.x02.me/i/AC3pvW.webp",
           "https://mbrissette.x02.me/i/OEwBFq.webp",
           "https://mbrissette.x02.me/i/6cYc5F.webp",
@@ -2638,7 +2638,7 @@
             frame.srcdoc = getEmbedHTML(src);
             frame.title = src === 'embed:loam-how-it-works' ? 'Loam – How it works interaction architecture' : 'Oatfi API-powered credit stack animation';
             frame.loading = 'lazy';
-            frame.setAttribute('sandbox', 'allow-scripts');
+            frame.setAttribute('sandbox', 'allow-scripts allow-same-origin');
             frame.setAttribute('scrolling', 'no');
             frame.className = 'w-full h-full block border-0 pointer-events-none';
             imgWrapper.appendChild(frame);
@@ -3363,22 +3363,22 @@ addEventListener('resize',fit);fit();
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{color-scheme:dark;--void:#050505;--signal:#fff;--violet:#a78bfa;--ink70:rgba(255,255,255,.7);--ink50:rgba(255,255,255,.5);--ink14:rgba(255,255,255,.14);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html,body{margin:0;height:100%;background:var(--void)}
+html,body{margin:0;height:100%;background:var(--void);overflow:hidden}
 body{display:flex;align-items:center;justify-content:center}
 main{width:min(100vw,calc((100vh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))*16/9));aspect-ratio:16/9;background:var(--void)}
 svg{width:100%;height:100%;display:block;font-family:Inter,system-ui,sans-serif}
 .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
 .script{font-family:"Great Vibes","Snell Roundhand",cursive}
-.st{opacity:0;transition:opacity .7s;pointer-events:none}
+.st{opacity:0;transition:opacity .5s;pointer-events:none}
 .st.on{opacity:1}
 .d{opacity:0;transition:opacity .6s}
 svg[data-s="4"] .d{opacity:1;transition-delay:var(--d,0s)}
 .pill{opacity:.3;transition:opacity .6s}
 svg:not([data-s="0"]) .pill{opacity:1}
-.dash{fill:none;stroke-width:1.2;stroke-dasharray:3 7;animation:dash 1s linear infinite}
+.dash{fill:none;stroke-width:1.2;stroke-dasharray:3 7;animation:dash .7s linear infinite}
 .lines{transition:opacity .8s}
 svg[data-s="1"] .lines.on{opacity:.9}
-svg:not([data-s="1"]) .lines.on{opacity:.22}
+svg:not([data-s="1"]) .lines.on{opacity:.22}svg[data-s="2"]:not([data-s="1"]) .lines.on{opacity:.55}
 svg:not([data-s="0"]) .live{animation:pulse 1.6s ease-in-out infinite}
 .blink{animation:blink 1s steps(2) infinite}
 .ring{fill:none;stroke:var(--violet);stroke-width:1.2;transform-box:fill-box;transform-origin:center;animation:ring 2.4s ease-out infinite}
@@ -3419,7 +3419,11 @@ svg[data-s="3"] .t-exp,svg[data-s="4"] .t-pin{fill:#050505}
 <text x="82" y="386" font-size="16" fill="#fff"><tspan id="qt" fill="rgba(255,255,255,.5)">search anything…</tspan><tspan id="cur" class="blink" fill="#a78bfa"></tspan></text>
 
 <ellipse cx="790" cy="380" rx="215" ry="140" fill="none" stroke="rgba(255,255,255,.14)" stroke-dasharray="2 8" class="st" data-from="2" data-to="4"/>
-<g id="nodes" class="st" data-from="2" data-to="4"></g>
+<g id="nodes"></g>
+<g class="st" data-from="1" data-to="4"><circle cx="572" cy="380" r="5" fill="#a78bfa"/></g>
+<g class="st" data-from="2" data-to="2"><circle class="ring" cx="572" cy="380" r="6"/></g>
+<g class="st" data-from="1" data-to="4"><line x1="230" y1="380" x2="258" y2="380" stroke="#a78bfa" stroke-width="1.2"/><circle cx="258" cy="380" r="5" fill="#a78bfa"/></g>
+<g class="st" data-from="1" data-to="1"><circle class="ring" cx="258" cy="380" r="6"/></g>
 <line id="lead" x1="0" y1="0" x2="780" y2="200" stroke="#a78bfa" stroke-dasharray="3 5" stroke-width="1" class="st" data-from="3" data-to="3"/>
 <g id="ringg" class="st" data-from="3" data-to="3"><circle class="ring" r="8"/><circle class="ring" r="8" style="animation-delay:.8s"/><circle class="ring" r="8" style="animation-delay:1.6s"/></g>
 <g id="kids" class="st" data-from="3" data-to="3"></g>
@@ -3441,84 +3445,180 @@ svg[data-s="3"] .t-exp,svg[data-s="4"] .t-pin{fill:#050505}
 <text x="1060" y="178" class="mono" font-size="11" fill="#a78bfa" letter-spacing="2">CONSTELLATION</text>
 </g>
 <text x="1140" y="270" class="mono st" data-from="2" data-to="3" font-size="11" fill="rgba(255,255,255,.5)" text-anchor="middle">pin what moves you</text>
-<g class="d" style="--d:2.2s" stroke="#a78bfa" stroke-width="1" opacity="1"><line x1="1100" y1="240" x2="1175" y2="214"/><line x1="1175" y1="214" x2="1140" y2="312"/><line x1="1100" y1="240" x2="1140" y2="312"/></g>
-<g class="d" style="--d:1.4s"><circle cx="1100" cy="240" r="9" fill="none" stroke="#10b981" opacity=".5"/><circle cx="1100" cy="240" r="5" fill="#10b981"/></g>
-<g class="d" style="--d:2s"><circle cx="1175" cy="214" r="9" fill="none" stroke="#ec4899" opacity=".5"/><circle cx="1175" cy="214" r="5" fill="#ec4899"/></g>
-<g class="d" style="--d:2.4s"><circle cx="1140" cy="312" r="9" fill="none" stroke="#3b82f6" opacity=".5"/><circle cx="1140" cy="312" r="5" fill="#3b82f6"/></g>
+<g class="d" style="--d:1.7s" stroke="#a78bfa" stroke-width="1" opacity="1"><line x1="1100" y1="240" x2="1175" y2="214"/><line x1="1175" y1="214" x2="1140" y2="312"/><line x1="1100" y1="240" x2="1140" y2="312"/></g>
+<g class="d" style="--d:1.1s"><circle cx="1100" cy="240" r="9" fill="none" stroke="#10b981" opacity=".5"/><circle cx="1100" cy="240" r="5" fill="#10b981"/></g>
+<g class="d" style="--d:1.4s"><circle cx="1175" cy="214" r="9" fill="none" stroke="#ec4899" opacity=".5"/><circle cx="1175" cy="214" r="5" fill="#ec4899"/></g>
+<g class="d" style="--d:1.8s"><circle cx="1140" cy="312" r="9" fill="none" stroke="#3b82f6" opacity=".5"/><circle cx="1140" cy="312" r="5" fill="#3b82f6"/></g>
 
-<g class="d" style="--d:3s">
+<g class="d" style="--d:2.2s">
 <line x1="1140" y1="368" x2="1140" y2="402" stroke="#a78bfa" stroke-width="1.2"/><path d="M1134 396L1140 404L1146 396" fill="none" stroke="#a78bfa" stroke-width="1.2"/>
 <text x="1152" y="390" class="mono" font-size="11" fill="#a78bfa">export</text>
 <rect x="1040" y="414" width="200" height="150" rx="12" fill="#0b0a10" stroke="rgba(167,139,250,.6)"/>
 <text x="1056" y="438" class="mono" font-size="11" fill="rgba(255,255,255,.5)">notes.md</text>
 </g>
 <g class="mono" font-size="11" fill="rgba(255,255,255,.85)">
-<text class="d" style="--d:3.3s" x="1056" y="466">## constellation</text>
-<text class="d" style="--d:3.6s" x="1056" y="488" fill="#10b981">- the octopus mind</text>
-<text class="d" style="--d:3.9s" x="1056" y="508" fill="#ec4899">- rover car chair</text>
-<text class="d" style="--d:4.2s" x="1056" y="528" fill="#3b82f6">- akzidenz-grotesk</text>
-<text class="d" style="--d:4.5s" x="1056" y="552" fill="rgba(255,255,255,.5)">via wikipedia · the met</text>
+<text class="d" style="--d:2.5s" x="1056" y="466">## constellation</text>
+<text class="d" style="--d:2.75s" x="1056" y="488" fill="#10b981">- the octopus mind</text>
+<text class="d" style="--d:3s" x="1056" y="508" fill="#ec4899">- rover car chair</text>
+<text class="d" style="--d:3.25s" x="1056" y="528" fill="#3b82f6">- akzidenz-grotesk</text>
+<text class="d" style="--d:3.5s" x="1056" y="552" fill="rgba(255,255,255,.5)">via wikipedia · the met</text>
 </g>
 
 <g id="fly" style="opacity:0"><circle r="12" fill="none" stroke="#a78bfa" stroke-width="1.5"/><circle r="6" fill="#10b981"/></g>
 
 </g>
-<text id="cap" x="640" y="636" text-anchor="middle" font-size="22" font-weight="300" fill="#fff"></text>
-<g id="progs"></g>
+<text id="cap" x="640" y="656" text-anchor="middle" font-size="22" font-weight="300" fill="#fff"></text>
+
 </svg>
 </main>
 <script>
-const $=s=>document.querySelector(s),svg=$('#s'),NS='http://www.w3.org/2000/svg';
-const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-const COL=['#3b82f6','#10b981','#f59e0b','#8b5cf6','#ec4899','#ec4899'];
-const SRC=['duckduckgo','wikipedia','openalex','hacker news','the met','art institute of chicago'];
-const CAP=['Type anything into one search box.','Every query fans out in parallel to six live sources.','Results merge into one field of nodes you can orbit.','Inspect a node, or expand it into a new search.','Pin discoveries to a constellation, then export Markdown notes.'];
-const LAB=['ask','fan out','orbit','expand','pin + export'];
-const DUR=[3500,4800,5000,5200,8000];
-let lines='',pills='';
-SRC.forEach((n,i)=>{const y=205+70*i;
-lines+=`<path class="dash" d="M230 380C265 380 265 ${y} 300 ${y}" stroke="#a78bfa"/><path class="dash" d="M520 ${y}C555 ${y} 555 380 585 380" stroke="${COL[i]}"/>`;
-pills+=`<g class="pill"><rect x="300" y="${y-18}" width="220" height="36" rx="18" fill="#0d0b14" stroke="rgba(255,255,255,.14)"/><circle class="live" cx="321" cy="${y}" r="4" fill="${COL[i]}"/><text x="335" y="${y+4}" class="mono" font-size="12" fill="rgba(255,255,255,.85)">${n}</text></g>`});
-$('#lines').innerHTML=lines;$('#pills').innerHTML=pills;
-let pr='';LAB.forEach((l,i)=>{pr+=`<g class="prog" id="p${i}" tabindex="0" role="button" aria-label="${l}"><rect x="${325+130*i}" y="662" width="110" height="28" rx="14"/><text class="mono" x="${380+130*i}" y="680" font-size="11" text-anchor="middle">${l}</text></g>`});
-$('#progs').innerHTML=pr;
-let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
-const N=22,F=1,nodes=[],ng=$('#nodes');
-for(let i=0;i<N;i++){const r=i==F?.78:.3+.7*rnd(),c=document.createElementNS(NS,'circle');
-c.setAttribute('fill',COL[i%6]);ng.appendChild(c);
-nodes.push({c,r,a:i==F?4.9:rnd()*6.283,w:(.09+.14*(1-r))*(reduce?0:1),h:(rnd()-.5)*2,x:0,y:0})}
-const kg=$('#kids'),kids=[];
-for(let i=0;i<6;i++){const c=document.createElementNS(NS,'circle');c.setAttribute('r',3.5);c.setAttribute('fill',['#10b981','#3b82f6','#f59e0b','#10b981','#8b5cf6','#10b981'][i]);kg.appendChild(c);kids.push(c)}
-const kl=document.createElementNS(NS,'text');kl.setAttribute('class','mono');kl.setAttribute('font-size',11);kl.setAttribute('fill','#a78bfa');kl.setAttribute('x',22);kl.setAttribute('y',-34);kl.textContent='new search: cephalopod';kg.appendChild(kl);
-function frame(ms){const t=ms/1000;
-nodes.forEach(n=>{const a=n.a+n.w*t,d=(Math.sin(a)+1)/2;
-n.x=790+200*n.r*Math.cos(a);n.y=380+110*n.r*Math.sin(a)+n.h*28;
-n.c.setAttribute('cx',n.x.toFixed(1));n.c.setAttribute('cy',n.y.toFixed(1));
-n.c.setAttribute('r',(3.5+4.5*d).toFixed(1));n.c.setAttribute('opacity',(.4+.6*d).toFixed(2))});
-const f=nodes[F],tr=`translate(${f.x.toFixed(1)} ${f.y.toFixed(1)})`;
-$('#ringg').setAttribute('transform',tr);$('#kids').setAttribute('transform',tr);
-$('#sel').setAttribute('cx',f.x);$('#sel').setAttribute('cy',f.y);
-$('#lead').setAttribute('x1',f.x);$('#lead').setAttribute('y1',f.y);
-kids.forEach((k,i)=>{const a=i*1.047+t*.9;k.setAttribute('cx',(30*Math.cos(a)).toFixed(1));k.setAttribute('cy',(22*Math.sin(a)).toFixed(1))});
-requestAnimationFrame(frame)}
-requestAnimationFrame(frame);
-let typer,timer,cur=-1;
-function setQ(txt,ph){const q=$('#qt');q.textContent=txt||'search anything…';q.setAttribute('fill',txt?'#fff':'rgba(255,255,255,.5)');$('#cur').textContent=ph?'|':''}
-function go(n){clearTimeout(timer);clearInterval(typer);cur=n;
-svg.dataset.s=n;
-document.querySelectorAll('[data-from]').forEach(e=>e.classList.toggle('on',n>=+e.dataset.from&&n<=+e.dataset.to));
-LAB.forEach((_,i)=>$('#p'+i).classList.toggle('on',i==n));
-const cp=$('#cap');cp.style.opacity=0;setTimeout(()=>{cp.textContent=CAP[n];cp.style.opacity=1},250);
-const fly=$('#fly');
-if(n==0){setQ('',true);let k=0;const w='octopus';setTimeout(()=>{typer=setInterval(()=>{k++;setQ(w.slice(0,k),true);if(k>=w.length)clearInterval(typer)},170)},800)}
-else{setQ('octopus',n<2)}
-if(n==4){const f=nodes[F];fly.style.transition='none';fly.style.transform=`translate(${f.x}px,${f.y}px)`;fly.style.opacity=1;void fly.getBoundingClientRect();
-setTimeout(()=>{if(cur!=4)return;fly.style.transition='transform 1.3s cubic-bezier(.5,0,.2,1)';fly.style.transform='translate(1100px,240px)'},60);
-setTimeout(()=>{if(cur==4)fly.style.opacity=0},1500)}
-else{fly.style.opacity=0}
-timer=setTimeout(()=>go((n+1)%5),DUR[n])}
-LAB.forEach((_,i)=>{const e=$('#p'+i);e.addEventListener('click',()=>go(i));e.addEventListener('keydown',ev=>{if(ev.key=='Enter'||ev.key==' '){ev.preventDefault();go(i)}})});
-(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>go(0));
+(function() {
+  const $ = s => document.querySelector(s), svg = $('#s'), NS = 'http://www.w3.org/2000/svg';
+  const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const COL = ['#3b82f6','#10b981','#f59e0b','#8b5cf6','#ec4899','#ec4899'];
+  const SRC = ['duckduckgo','wikipedia','openalex','hacker news','the met','art institute of chicago'];
+  const CAP = [
+    'Type anything into one search box.',
+    'Every query fans out in parallel to six live sources.',
+    'Results merge into one field of nodes you can orbit.',
+    'Inspect a node, or expand it into a new search.',
+    'Pin discoveries to a constellation, then export Markdown notes.'
+  ];
+  const DUR = [2600, 3600, 3800, 4000, 6200];
+  let lines = '', pills = '';
+  SRC.forEach((n, i) => {
+    const y = 205 + 70 * i;
+    lines += '<path class="dash" d="M258 380C280 380 280 ' + y + ' 300 ' + y + '" stroke="#a78bfa"/><path class="dash" d="M520 ' + y + 'C545 ' + y + ' 545 380 572 380" stroke="' + COL[i] + '"/>';
+    pills += '<g class="pill"><rect x="300" y="' + (y - 18) + '" width="220" height="36" rx="18" fill="#0d0b14" stroke="rgba(255,255,255,.14)"/><circle class="live" cx="321" cy="' + y + '" r="4" fill="' + COL[i] + '"/><text x="335" y="' + (y + 4) + '" class="mono" font-size="12" fill="rgba(255,255,255,.85)">' + n + '</text></g>';
+  });
+  $('#lines').innerHTML = lines;
+  $('#pills').innerHTML = pills;
+
+  let seed = 7;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const N = 22, F = 1, nodes = [], ng = $('#nodes');
+  for (let i = 0; i < N; i++) {
+    const r = i === F ? .78 : .3 + .7 * rnd(), c = document.createElementNS(NS, 'circle');
+    c.setAttribute('fill', COL[i % 6]);
+    ng.appendChild(c);
+    nodes.push({ c, r, a: i === F ? 4.9 : rnd() * 6.283, w: (.09 + .14 * (1 - r)) * (reduce ? 0 : 1), h: (rnd() - .5) * 2, x: 0, y: 0 });
+  }
+  const kg = $('#kids'), kids = [];
+  for (let i = 0; i < 6; i++) {
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('r', 3.5);
+    c.setAttribute('fill', ['#10b981','#3b82f6','#f59e0b','#10b981','#8b5cf6','#10b981'][i]);
+    kg.appendChild(c);
+    kids.push(c);
+  }
+  const kl = document.createElementNS(NS, 'text');
+  kl.setAttribute('class', 'mono');
+  kl.setAttribute('font-size', 11);
+  kl.setAttribute('fill', '#a78bfa');
+  kl.setAttribute('x', 22);
+  kl.setAttribute('y', -34);
+  kl.textContent = 'new search: cephalopod';
+  kg.appendChild(kl);
+
+  let emT = null;
+  function frame(ms) {
+    const t = ms / 1000;
+    nodes.forEach((n, i) => {
+      const a = n.a + n.w * t;
+      const d = (Math.sin(a) + 1) / 2;
+      const e = emT == null ? 0 : Math.min(1, Math.max(0, ((ms - emT) / 1000 - i * .05) / .9));
+      const k = 1 - Math.pow(1 - e, 3);
+      n.x = 572 + (790 + 200 * n.r * Math.cos(a) - 572) * k;
+      n.y = 380 + (110 * n.r * Math.sin(a) + n.h * 28) * k;
+      n.c.setAttribute('cx', n.x.toFixed(1));
+      n.c.setAttribute('cy', n.y.toFixed(1));
+      n.c.setAttribute('r', ((3.5 + 4.5 * d) * k).toFixed(1));
+      n.c.setAttribute('opacity', ((.4 + .6 * d) * Math.min(1, e * 3)).toFixed(2));
+    });
+    const f = nodes[F];
+    const tr = 'translate(' + f.x.toFixed(1) + ' ' + f.y.toFixed(1) + ')';
+    $('#ringg').setAttribute('transform', tr);
+    $('#kids').setAttribute('transform', tr);
+    $('#sel').setAttribute('cx', f.x);
+    $('#sel').setAttribute('cy', f.y);
+    $('#lead').setAttribute('x1', f.x);
+    $('#lead').setAttribute('y1', f.y);
+    kids.forEach((k, i) => {
+      const a = i * 1.047 + t * .9;
+      k.setAttribute('cx', (30 * Math.cos(a)).toFixed(1));
+      k.setAttribute('cy', (22 * Math.sin(a)).toFixed(1));
+    });
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  let typer, timer, cur = -1;
+  function setQ(txt, ph) {
+    const q = $('#qt');
+    q.textContent = txt || 'search anything…';
+    q.setAttribute('fill', txt ? '#fff' : 'rgba(255,255,255,.5)');
+    $('#cur').textContent = ph ? '|' : '';
+  }
+
+  function go(n) {
+    clearTimeout(timer);
+    clearInterval(typer);
+    cur = n;
+    if (n < 2) emT = null;
+    else if (emT == null) emT = performance.now();
+    svg.dataset.s = n;
+    document.querySelectorAll('[data-from]').forEach(e => {
+      const from = +e.dataset.from;
+      const to = +e.dataset.to;
+      e.classList.toggle('on', n >= from && n <= to);
+    });
+
+    const cp = $('#cap');
+    cp.style.opacity = 0;
+    setTimeout(() => {
+      cp.textContent = CAP[n];
+      cp.style.opacity = 1;
+    }, 250);
+
+    const fly = $('#fly');
+    if (n === 0) {
+      setQ('', true);
+      let k = 0;
+      const w = 'octopus';
+      setTimeout(() => {
+        typer = setInterval(() => {
+          k++;
+          setQ(w.slice(0, k), true);
+          if (k >= w.length) clearInterval(typer);
+        }, 120);
+      }, 500);
+    } else {
+      setQ('octopus', n < 2);
+    }
+
+    if (n === 4) {
+      const f = nodes[F];
+      fly.style.transition = 'none';
+      fly.style.transform = 'translate(' + f.x + 'px,' + f.y + 'px)';
+      fly.style.opacity = '1';
+      void fly.getBoundingClientRect();
+      setTimeout(() => {
+        if (cur !== 4) return;
+        fly.style.transition = 'transform 1s cubic-bezier(.5,0,.2,1)';
+        fly.style.transform = 'translate(1100px,240px)';
+      }, 60);
+      setTimeout(() => {
+        if (cur === 4) fly.style.opacity = '0';
+      }, 1150);
+    } else {
+      fly.style.opacity = '0';
+    }
+
+    timer = setTimeout(() => go((n + 1) % 5), DUR[n]);
+  }
+
+  go(0);
+})();
 <\/script>
 </body>
 </html>
