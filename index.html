@@ -1913,11 +1913,11 @@ h1{position:absolute;z-index:3;left:0;right:0;top:calc(var(--u)*240);text-align:
       svg.classList.add(&apos;reset&apos;); svg.classList.remove(&apos;play&apos;,&apos;out&apos;);
       void svg.getBoundingClientRect();
       svg.classList.remove(&apos;reset&apos;);
-      await wait(350);
+      await wait(60);
       svg.classList.add(&apos;play&apos;);
-      await wait(10500);
+      await wait(9000);
       svg.classList.add(&apos;out&apos;);
-      await wait(1100);
+      await wait(750);
     }
   }
   (document.fonts &amp;&amp; document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(loop);
